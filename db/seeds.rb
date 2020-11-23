@@ -16,6 +16,20 @@ users = []
 orders = []
 artworks = []
 carts = []
+categories_names = [
+  'Classic',
+  'Epic',
+  'Fairy tale',
+  'Fantasy',
+  'Horror',
+  'Humor',
+  'Legend',
+  'Mystery',
+  'Mythology',
+  'Romance',
+  'Travel',
+  'Superhero'
+]
 categories = []
 
 10.times do
@@ -24,7 +38,10 @@ categories = []
       firstname: Faker::Name.first_name,
       lastname: Faker::Name.last_name,
       email: Faker::Internet.email(domain: 'yopmail'),
-      description: Faker::Lorem.sentences,
+      description:
+        Faker::Lorem.sentence(
+          word_count: 10, supplemental: true, random_words_to_add: 5
+        ),
       age: rand(18..99),
       password: 'azerty',
       password_confirmation: 'azerty'
@@ -41,15 +58,17 @@ end
       cart: carts.sample
     )
 end
-
-10.times { categories << Category.create(name: Faker::Book.genre) }
+10.times { categories << Category.create(name: categories_names.sample) }
 
 10.times do
   artworks <<
     Artwork.create(
       title: Faker::Book.title,
       price: Faker::Number.decimal(l_digits: 3, r_digits: 2),
-      description: Faker::Lorem.sentences,
+      description:
+        Faker::Lorem.sentence(
+          word_count: 10, supplemental: true, random_words_to_add: 5
+        ),
       category: categories.sample
     )
 end
