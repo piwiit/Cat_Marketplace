@@ -8,6 +8,10 @@ Bundler.require(*Rails.groups)
 
 module CatMarketplace
   class Application < Rails::Application # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 6.0 # the framework and any gems in your application.
+    config.load_defaults 6.0
+    config.generators.helper = false
+    config.generators.assets = false
+
+    # the framework and any gems in your application.
   end
 end
