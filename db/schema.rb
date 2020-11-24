@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 2020_11_23_132223) do
   create_table "artworks", force: :cascade do |t|
     t.string "title"
     t.float "price"
-    t.string "image"
     t.text "description"
     t.bigint "category_id"
     t.datetime "created_at", precision: 6, null: false

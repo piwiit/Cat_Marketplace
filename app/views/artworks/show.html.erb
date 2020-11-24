@@ -1,2 +1,20 @@
-<h1>Artworks#show</h1>
-<p>Find me in app/views/artworks/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Title:</strong>
+  <%= @artwork.title %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @artwork.description %>
+</p>
+<p>
+  <strong>Price:</strong>
+  <%= @artwork.price %>
+</p>
+<p>
+  <% if @artwork.image.attached? %>
+    <%= image_tag @artwork.image ,width: "10%"%>
+  <% end %>
+</p>
+<%= link_to 'Edit', edit_artwork_path(@artwork) %> |
+<%= link_to 'Back', artworks_path %>
