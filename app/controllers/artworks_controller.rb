@@ -9,6 +9,7 @@ class ArtworksController < ApplicationController
   end
   
   def show
+    @artworks = Artwork.all
     @artwork = Artworks.find(params[:id])
   end
 
@@ -17,10 +18,10 @@ class ArtworksController < ApplicationController
   end
 
   def create
-    @artwork = Artwork.new('title': params[:title],
-                              'price': params[:price],
-                              'description': params[:description],
-                              'category': params[:category])
+    @artwork = Artwork.new(title: params[:title],
+                              price: params[:price],
+                              description: params[:description],
+                              category: params[:category])
     if @artwork.save
        redirect_to root_path
        flash[:notice_good] = "Artwork ajouté !"
