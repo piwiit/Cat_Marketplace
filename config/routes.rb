@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   end
   resources :artworks
   resources :categories
+  resources :charges
 
 end
