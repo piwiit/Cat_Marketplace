@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   def index
     @order = Order.all
   end
-  
+
   def show
     @order = Order.find(params[:id])
   end
@@ -16,10 +16,10 @@ class OrdersController < ApplicationController
     if @order.save
       redirect_to root_path
       flash[:notice_good] = "Paiement validé!"
-    else 
+    else
       flash[:notice_bad] = "Paiement refusé!"
       render 'new'
-    end 
+    end
   end
 
   def edit
@@ -34,9 +34,9 @@ class OrdersController < ApplicationController
   end
 
   def destroy
-    @order = Event.find(params[:id])
+    @order = Order.find(params[:id])
     @order.destroy
     redirect_to root_path
   end
-  
+
 end

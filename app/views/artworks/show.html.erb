@@ -1,2 +1,28 @@
-<h1>Artworks#show</h1>
-<p>Find me in app/views/artworks/show.html.erb</p>
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Title</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Categorie</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%@artworks.each do|artwork|%>
+      <tr>
+        <td>
+          <% if artwork.picture.attached?%>
+            <%= image_tag artwork.picture,width:"30%"%>
+          <%end%>
+        </td>
+        <td><%=artwork.title%></td>
+        <td><%=artwork.price%> €</td>
+        <td><%=artwork.description%></td>
+        <td><%=artwork.category_id%></td>
+      </tr>
+    <%end%>
+  </tbody>
+</table>
+<br>
+<%=link_to 'new artwork', new_artwork_path%>

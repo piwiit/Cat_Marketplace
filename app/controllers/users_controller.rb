@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
   end
-  
+
   def show
     @user = User.find(params[:id])
   end
@@ -21,10 +21,10 @@ class UsersController < ApplicationController
       log_in(@user) # La méthode est dans le users_helper.rb
       flash[:notice_good] = "Connexion réussi"
       redirect_to root_path
-    else 
+    else
       flash[:notice_bad] = "Erreur de connexion"
       render 'new'
-    end 
+    end
   end
 
   def edit
@@ -39,9 +39,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = Event.find(params[:id])
+    @user = User.find(params[:id])
     @user.destroy
     redirect_to root_path
   end
-  
+
 end
