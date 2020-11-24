@@ -4,9 +4,24 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+
+require("js/bootstrap.min")
+require("js/custom")
+require("js/html5shiv.min")
+require("js/jquery-ui")
+require("js/jquery.countdown.min")
+require("js/jquery.min")
+require("js/jquery.parallax-1.1.3")
+require("js/jquery.plugin.min")
+require("js/off-canvas")
+require("js/respond.min")
+require("js/custom-rs")
+require("js/jquery.themepunch.revolution.min")
+require("js/jquery.themepunch.tools.min")
+
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

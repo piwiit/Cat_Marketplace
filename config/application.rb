@@ -11,7 +11,7 @@ module CatMarketplace
     config.load_defaults 6.0
     config.generators.helper = false
     config.generators.assets = false
-
+    config.assets.paths << Rails.root.join("app", "assets", "images")
     # the framework and any gems in your application.
   end
 end
