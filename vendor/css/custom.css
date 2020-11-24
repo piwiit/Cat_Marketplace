@@ -1,7 +1,11 @@
+header {
+  style: none;
+}
+
 .jumbotron {
   align-items: center;
-  background-image: url('https://images.pexels.com/photos/358485/pexels-photo-358485.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
-  background-position:left center;
+  background-image: url("https://images.pexels.com/photos/358485/pexels-photo-358485.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-position: left center;
   background-size: cover;
   color: #ffffff;
   display: flex;
