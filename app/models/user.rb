@@ -9,4 +9,8 @@ class User < ApplicationRecord #  :lockable, :timeoutable, :trackable and :omnia
   validates_presence_of :firstname, :lastname, :age
   validates :age,
             numericality: { only_integer: true, greater_than_or_equal_to: 13 }
+validates :email,
+  presence: true,
+  uniqueness: true,
+  format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "Entrez une adresse email valide." }
 end

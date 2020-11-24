@@ -38,7 +38,8 @@ categories_names = [
       email: Faker::Internet.email(domain: 'yopmail'),
       age: rand(13..99),
       password: 'azerty',
-      password_confirmation: 'azerty'
+      password_confirmation: 'azerty',
+      is_admin: false
     )
 end
 
@@ -68,7 +69,8 @@ end
         Faker::Lorem.sentence(
           word_count: 10, supplemental: true, random_words_to_add: 5
         ),
-      category_id: Category.ids.sample
+      category_id: Category.ids.sample,
+      quantity: Faker::Number.number(digits: 3)
     )
 end
 
