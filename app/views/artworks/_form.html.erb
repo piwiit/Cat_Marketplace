@@ -1,0 +1,35 @@
+<%= form_with(model: artwork, local: true) do |form| %>
+  <% if artwork.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(artwork.errors.count, "error") %> prohibited this artwork from being saved:</h2>
+      <ul>
+        <% artwork.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title,required: true %>
+  </div>
+  <div class="field">
+    <%= form.label :category_id %>
+    <%= form.number_field :category_id,required: true %>
+  </div>
+  <div class="field">
+    <%= form.label :image %><br />
+    <%= form.file_field :image, accept:"image/jpeg, image/gif, image/png" %>
+  </div>
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description,required: true,min: 50, max: 5000 %>
+  </div>
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price ,required: true,min: 1%>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

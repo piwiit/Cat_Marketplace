@@ -1,34 +1,32 @@
-class ArtworksController < ApplicationController
-
-  # PRECISER les bon params, ajouter aguilleur AJAX, et les redirect du NEW et UPDATE
-  # gerer Activerecord pour creation et update d'artwork
-  # verifier les REDIRECT
-
+class ArtworksController < ApplicationController # verifier les REDIRECT # gerer Activerecord pour creation et update d'artwork # PRECISER les bon params, ajouter aguilleur AJAX, et les redirect du NEW et UPDATE
   def index
-    @artworks = Artworks.all
+    @artworks = Artwork.all
   end
-  
+
   def show
     @artworks = Artwork.all
     @artwork = Artworks.find(params[:id])
   end
 
   def new
-  @artwork = Artwork.new
+    @artwork = Artwork.new
   end
 
   def create
-    @artwork = Artwork.new(title: params[:title],
-                              price: params[:price],
-                              description: params[:description],
-                              category: params[:category])
+    @artwork =
+      Artwork.create(
+        title: params[:title],
+        price: params[:price],
+        description: params[:description],
+        category_id: params[:category_id]
+      )
     if @artwork.save
-       redirect_to root_path
-       flash[:notice_good] = "Artwork ajouté !"
-     else
-redirect_to path
-flash[:notice_bad] = "Artwork non crée !"
-end
+      redirect_to artworks_path
+      flash[:notice_good] = 'Artwork ajouté !'
+    else
+      redirect_to artworks_path
+      flash[:notice_bad] = 'Artwork non crée !'
+    end
   end
 
   def edit
@@ -37,21 +35,25 @@ end
 
   def update
     @artwork_to_update = Artwork.find(params[:id])
-    artwork_params = params.require(:artwork).permit(:title, :price, :description, :category)
+    artwork_params =
+      params.require(:artwork).permit(
+        :title,
+        :price,
+        :description,
+        :category_id
+      )
     @artwork_to_update.update(artwork_params)
 
     if @artwork_to_update.update(artwork_params)
 
     else
-    end
 
+    end
   end
 
-   def destroy
+  def destroy
     @artwork_to_delete = Artworks.find(params[:id])
     @artwork_to_delete.destroy
     redirect_to root_path
-   end
   end
-
 end
