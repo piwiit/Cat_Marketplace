@@ -1,3 +1,14 @@
+.jumbotron {
+  align-items: center;
+  background-image: url('https://images.pexels.com/photos/358485/pexels-photo-358485.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  background-position:left center;
+  background-size: cover;
+  color: #ffffff;
+  display: flex;
+  height: 500px;
+  text-shadow: 0.25px 0.25px 0.25px #000000;
+}
+
 .section-profile {
   padding: 1.75rem;
   border-bottom: #272e3a solid 1px;
@@ -279,7 +290,7 @@ input {
   position: relative;
 }
 .box-shadow:before {
-  background-image: url("../images/shadow.png");
+  background-image: url("shadow.png");
   background-position: center bottom;
   background-color: transparent;
   background-repeat: no-repeat;
@@ -324,7 +335,7 @@ input {
   letter-spacing: 0.3px;
 }
 .style-boxed {
-  background-image: url("../images/background.jpg");
+  background-image: url("background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -569,7 +580,7 @@ input {
 .tz-search .select-arrow:after {
   font-family: "FontAwesome";
   width: 28px;
-  content: "\f0d7";
+  content: "↓";
   position: absolute;
   right: 0;
   top: 1px;
@@ -629,7 +640,7 @@ input {
   background-color: transparent;
   background-position: center center;
   background-repeat: no-repeat;
-  background-image: url("../images/searchicon.png");
+  background-image: url("searchicon.png");
   display: block;
   position: absolute;
   right: 16px;
@@ -967,7 +978,7 @@ input {
   background-position: 14px center;
 }
 .tz-ecommerce-meta > li.tz-mini-cart {
-  background-image: url("../images/cart_icon.png");
+  background-image: url("cart_icon.png");
   padding-right: 0;
 }
 .tz-ecommerce-meta > li.tz-mini-cart > strong {
@@ -991,7 +1002,7 @@ input {
   transition: all 0.5s ease 0.1s;
 }
 .tz-ecommerce-meta > li.tz-menu-wishlist {
-  background-image: url("../images/wishlisticon.png");
+  background-image: url("wishlisticon.png");
   background-position: 14px 24px;
 }
 .tz-ecommerce-meta > li > a {
@@ -1601,7 +1612,7 @@ input {
   padding-top: 30px;
 }
 .product-event-content .event-footer .add-to-cart {
-  background-image: url("../images/cart_icon.png");
+  background-image: url("cart_icon.png");
   background-position: 20px center;
   background-color: #393e46;
   padding: 12px 23px 13px 53px;
@@ -1618,7 +1629,7 @@ input {
   background-color: #222831;
 }
 .product-event-content .event-footer .add-to-wishlist {
-  background-image: url("../images/wishlist_black.png");
+  background-image: url("wishlist_black.png");
   background-position: 0 center;
   background-color: transparent;
   padding: 12px 0 13px 33px;
@@ -2691,7 +2702,7 @@ input {
   content: "";
   width: 5px;
   height: 5px;
-  background: url("../images/bar.png") no-repeat center center;
+  background: url("bar.png") no-repeat center center;
 }
 .widget_color_filter {
   margin-top: 20px;
@@ -2884,7 +2895,7 @@ input {
   padding: 0;
 }
 .single_add_to_cart_button {
-  background-image: url("../images/cart_icon.png");
+  background-image: url("cart_icon.png");
   background-position: 20px center;
   background-color: #393e46;
   padding: 12px 23px 12px 53px;
@@ -2902,7 +2913,7 @@ input {
   background-color: #222831;
 }
 .single_add_to_wishlist {
-  background-image: url("../images/wishlist_black.png");
+  background-image: url("wishlist_black.png");
   background-position: 0 center;
   background-color: transparent;
   padding: 12px 0 13px 33px;
@@ -2994,7 +3005,7 @@ input {
   text-align: center;
 }
 .shop_table .product-remove .remove {
-  background: url("../images/delete.png") center center no-repeat;
+  background: url("delete.png") center center no-repeat;
   display: inline-block;
   width: 10px;
   height: 10px;
@@ -3708,7 +3719,7 @@ input {
   -webkit-border-radius: 0;
   -ms-border-radius: 0;
   -o-border-radius: 0;
-  background: url("../images/search-w.png") no-repeat center center #222831;
+  background: url("search-w.png") no-repeat center center #222831;
 }
 .widget_search .tz-search-form .tz-submit:hover {
   background-color: #393e46;
@@ -4261,7 +4272,7 @@ blockquote {
 .tp-leftarrow.default {
   border: 2px solid #ffffff;
   background-color: transparent;
-  background-image: url("../images/arrow_left.png");
+  background-image: url("arrow_left.png");
   background-position: 10px center;
   -webkit-transition: all 0.4s ease 0s;
   -o-transition: all 0.4s ease 0s;
@@ -4276,7 +4287,7 @@ blockquote {
 .tp-rightarrow.default {
   border: 2px solid #ffffff;
   background-color: transparent;
-  background-image: url("../images/arrow_right.png");
+  background-image: url("arrow_right.png");
   background-position: 10px center;
   -webkit-transition: all 0.4s ease 0s;
   -o-transition: all 0.4s ease 0s;
