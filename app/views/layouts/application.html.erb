@@ -6,153 +6,139 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application'%>
-<script src="https://kit.fontawesome.com/8f239ccbef.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/8f239ccbef.js" crossorigin="anonymous"></script>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
   </head>
   <body>
-      <div class="tz-site">
-
-        <!--Start id tz header-->
-        <header id="tz-header" class="bk-white">
-            <div class="container">
-
-                <!--Start header content-->
-                <div class="header-content">
-                    <h3 class="tz-logo pull-left"><a href="index.html"><img src="assets/logo.png" alt="home" /></a></h3>
-                    <div class="tz-search pull-right">
-
-                        <!--Start form search-->
-                        <form>
-                            <label class="select-arrow">
-                                <select name="category">
-                                    <option value="">Catégories</option>
-                                    <option value="#">Catégorie 1</option>
-                                    <option value="#">Catégorie 2</option>
-                                    <option value="#">Catégorie 3</option>
-                                    <option value="#">Catégorie 4</option>
-                                    <option value="#">Catégorie 5</option>
-                                </select>
-                            </label>
-                            <input type="text" class="tz-query" id="tz-query" value="" placeholder="Recherche de produits">
-                            <button type="submit"></button>
-                        </form>
-                        <!--End Form search-->
-                    </div>
-                </div>
-                <!--End class header content-->
+    <div class="tz-site">
+      <!--Start id tz header-->
+      <header id="tz-header" class="bk-white">
+        <div class="container">
+          <!--Start header content-->
+          <div class="header-content">
+            <h3 class="tz-logo pull-left"><a href="index.html"><img src="assets/logo.png" alt="home" /></a></h3>
+            <div class="tz-search pull-right">
+              <!--Start form search-->
+              <form>
+                <label class="select-arrow">
+                  <select name="category">
+                    <option value="">Catégories</option>
+                    <option value="#">Catégorie 1</option>
+                    <option value="#">Catégorie 2</option>
+                    <option value="#">Catégorie 3</option>
+                    <option value="#">Catégorie 4</option>
+                    <option value="#">Catégorie 5</option>
+                  </select>
+                </label>
+                <input type="text" class="tz-query" id="tz-query" value="" placeholder="Recherche de produits">
+                <button type="submit"></button>
+              </form>
+              <!--End Form search-->
             </div>
-
-            <!--Start main menu -->
-            <nav class="tz-menu-primary">
-                <div class="container">
-
-                    <!--Main Menu-->
-                    <ul class="tz-main-menu pull-left nav-collapse">
-                        <li>
-                            <a href="index.html">Accueil</a>
-                        </li>
-                        <li>
-                            <a href="shop.html">
-                                Catégories
-                                <span class="red-light">Nouveautés!</span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="shop-rightsidebar.html">Catégorie 1</a>
-                                </li>
-                                <li>
-                                    <a href="shop-cart.html">Catégorie 2</a>
-                                </li>
-                                <li>
-                                    <a href="shop-checkout.html">Catégorie 3</a>
-                                </li>
-                                <li>
-                                    <a href="shop-register.html">Catégorie 4</a>
-                                </li>
-                                <li>
-                                    <a href="single-product.html">Catégorie 5</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="contact.html">Contact</a>
-                        </li>
-                    </ul>
-                    <!--End Main menu-->
-
-                    <!--Shop meta-->
-                    
-                    <ul class="tz-ecommerce-meta pull-right">
-                        <li class="tz-header-login">
-                            <a href="#">S'inscrire/Se Connecter</a>
-                            <div class="tz-login-form">
-                                <form> 
-                                    <p class="form-content">
-                                        <label for="username">Email</label>
-                                        <input type="text" name="username" id="username" value="">
-                                    </p>
-                                    <p class="form-content">
-                                        <label for="password">Mot de passe</label>
-                                        <input type="password" name="username" id="password" value="">
-                                    </p>
-                                    
-                                    <p class="form-footer">
-                                        <a href="#" style="margin-right: 10px;">Mot de passe perdu?</a>
-                                        <button type="submit" class="pull-right button_class">Se connecter</button>
-                                    </p>
-                                    <p class="form-text">
-                                        Créer un compte? <a href="shop-register.html">Cliquez ici</a>
-                                    </p>
-                                </form>
-                            </div>
-                        </li>
-                    
-                        <li class="tz-mini-cart">
-                            <a href="shop-cart.html"><strong>2</strong>Panier : 199€</a>
-
-                            <!--Mini cart-->
-                            <ul class="cart-inner">
-                                <li class="mini-cart-content">
-                                    <div class="mini-cart-img"><img src="assets/product/product-cart1.png" alt="product search one"></div>
-                                    <div class="mini-cart-ds">
-                                        <h6><a href="single-product.html">Dessin 1</a></h6>
-                                        <span class="mini-cart-meta">
-                                            <a href="single-product.html">2650 €</a>
-                                            <span class="mini-meta">
-                                               <span class="mini-color">Livraison: 24h <i class="far fa-clock"></i></span>
-                                            </span>
-                                        </span>
-                                    </div>
-                                    <span class="mini-cart-delete"><img src="assets/delete.png" alt="delete"></span>
-                                </li>
-                                <li class="mini-subtotal">
-                                    <span class="subtotal-content">
-                                        Sous-total:
-                                        <strong class="pull-right">2650 €</strong>
-                                    </span>
-                                </li>
-                                <li class="mini-footer">
-                                    <a href="shop-cart.html" class="view-cart">Voir le panier</a>
-                                    <a href="shop-checkout.html" class="check-out">Payer</a>
-                                </li>
-
-                            </ul>
-                            <!--End mini cart-->
-                           
-                        </li>
-                    </ul>
-                    <!--End Shop meta-->
-
-                    <!--navigation mobi-->
-                    <button data-target=".nav-collapse" class="btn-navbar tz_icon_menu" type="button">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <!--End navigation mobi-->
+          </div>
+          <!--End class header content-->
+        </div>
+        <!--Start main menu -->
+        <nav class="tz-menu-primary">
+          <div class="container">
+            <!--Main Menu-->
+            <ul class="tz-main-menu pull-left nav-collapse">
+              <li>
+                <a href="/">Accueil</a>
+              </li>
+              <li>
+                <a href="shop.html">
+                  Catégories
+                  <span class="red-light">Nouveautés!</span>
+                </a>
+                <ul class="sub-menu">
+                  <li>
+                    <a href="shop-rightsidebar.html">Catégorie 1</a>
+                  </li>
+                  <li>
+                    <a href="shop-cart.html">Catégorie 2</a>
+                  </li>
+                  <li>
+                    <a href="shop-checkout.html">Catégorie 3</a>
+                  </li>
+                  <li>
+                    <a href="shop-register.html">Catégorie 4</a>
+                  </li>
+                  <li>
+                    <a href="single-product.html">Catégorie 5</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="/">Contact</a>
+              </li>
+            </ul>
+            <!--End Main menu-->
+            <!--Shop meta-->
+            <ul class="tz-ecommerce-meta pull-right">
+              <li class="tz-header-login">
+                <a href="/users/sign_in">S'inscrire/Se Connecter</a>
+                <div class="tz-login-form">
+                  <form>
+                    <p class="form-content">
+                      <label for="username">Email</label>
+                      <input type="text" name="username" id="username" value="">
+                    </p>
+                    <p class="form-content">
+                      <label for="password">Mot de passe</label>
+                      <input type="password" name="username" id="password" value="">
+                    </p>
+                    <p class="form-footer">
+                      <a href="/users/password/new" style="margin-right: 10px;">Mot de passe perdu?</a>
+                      <button type="submit" class="pull-right button_class">Se connecter</button>
+                    </p>
+                    <p class="form-text">
+                      Créer un compte? <a href="/users/sign_up">Cliquez ici</a>
+                    </p>
+                  </form>
                 </div>
-            </nav>
-            <!--End stat main menu-->
-
-        </header>
-    <%= yield %>
-  </body>
-</html>
+              </li>
+              <li class="tz-mini-cart">
+                <a href="/users/:user_id/carts/:id"><strong>2</strong>Panier : 199€</a>
+                <!--Mini cart-->
+                <ul class="cart-inner">
+                  <li class="mini-cart-content">
+                    <div class="mini-cart-img"><img src="assets/product/product-cart1.png" alt="product search one"></div>
+                    <div class="mini-cart-ds">
+                      <h6><a href="single-product.html">Dessin 1</a></h6>
+                      <span class="mini-cart-meta">
+                        <a href="single-product.html">2650 €</a>
+                        <span class="mini-meta">
+                          <span class="mini-color">Livraison: 24h <i class="far fa-clock"></i></span>
+                        </span>
+                      </span>
+                    </div>
+                    <span class="mini-cart-delete"><img src="assets/delete.png" alt="delete"></span>
+                  </li>
+                  <li class="mini-subtotal">
+                    <span class="subtotal-content">
+                      Sous-total:
+                      <strong class="pull-right">2650 €</strong>
+                    </span>
+                  </li>
+                  <li class="mini-footer">
+                    <a href="/users/:current_user.id/carts/:id" class="view-cart">Voir le panier</a>
+                    <a href="shop-checkout.html" class="check-out">Payer</a>
+                  </li>
+                </ul>
+                <!--End mini cart-->
+              </li>
+            </ul>
+            <!--End Shop meta-->
+            <!--navigation mobi-->
+            <button data-target=".nav-collapse" class="btn-navbar tz_icon_menu" type="button">
+              <i class="fa fa-bars"></i>
+            </button>
+            <!--End navigation mobi-->
+          </div>
+        </nav>
+        <!--End stat main menu-->
+      </header>
+      <%= yield %>
+    </body>
+  </html>

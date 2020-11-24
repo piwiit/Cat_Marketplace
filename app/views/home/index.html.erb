@@ -1,270 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Home</title>
-
-
     <!--[if lt IE 9]>
-    <script src="js/html5shiv.min.js"></script>
-    <script src="js/respond.min.js"></script>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
     <![endif]-->
-</head>
-<body>
+  </head>
+  <body>
     <!--Start class site-->
-<section class="jumbotron">
-  <div class="container">
-    <div class="row text-center">
-       <h1>Ankan'Art</h1>
-      <h3>Dessin Manga</h3>
-      <br>
-      <a class="btn btn-warning" href="#" role="button" style="color: black">Catalogue</a>
+    <section class="jumbotron">
+      <div class="container">
+        <div class="row text-center">
+          <h1>Ankan'Art</h1>
+          <h3>Dessin Manga</h3>
+          <br>
+          <%= link_to "Catalogue", artworks_path, class: "btn btn-warning", style: "color: black"%>
+        </div>
+      </div>
+    </section>
+    <!--Start Custom content-->
+    <div class="container">
+      <div class="box-shadow section-small">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="custom-content">
+              <h3>Livraison par mail</h3>
+              <p>7j/7 24h/24</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="custom-content border-left">
+              <h3>Haute Résolution</h3>
+              <p>Nos dessins sont réalisés pour rendre parfaitement sur tous vos appareils</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="custom-content border-left">
+              <h3>Offrez à un ami</h3>
+              <p>Il recevra son cadeau emballé dans un joli mail !</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <!--End custom content-->
+    <!--Start section medium for product event-->
+    <div class="section-medium bk-gray">
+      <div class="container">
+        <!--Product event-->
+        <div class="product-event">
+          <div class="row">
+            <div class="col-md-6">
+              <!--Thumnbail-->
+              <div class="event-thumbail">
+                <img src="https://images.pexels.com/photos/65767/pexels-photo-65767.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="product event">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <!--Product content-->
+              <ul class="product-event-content">
+                <li>
+                  <div id="defaultCountdown" class="tzCountdown is-countdown"><span class="countdown-row countdown-show3"><span class="countdown-section"><span class="countdown-amount">24</span><span class="countdown-period">Hours</span></span><span class="countdown-section"><span class="countdown-amount">0</span><span class="countdown-period">Minutes</span></span><span class="countdown-section"><span class="countdown-amount">0</span><span class="countdown-period">Seconds</span></span></span></div>
+                </li>
+                <li>
+                  <h3><a href="single-product.html">Dessin Naruto</a></h3>
+                  <span class="event-price">10€</span>
+                </li>
+                <li class="product-event-attr">
+                  <span class="tz-color">
+                    Format:
+                    <i class="">JPEG</i>
+                  </span>
+                </li>
+                <li class="event-footer">
+                  <a href="shop-cart.html" class="add-to-cart">Ajouter au panier</a>
+                </li>
+              </ul>
+              <!--End Product content-->
+            </div>
+          </div>
+        </div>
+        <!--End product event-->
+      </div>
     </div>
-  </section>
-
-        <!--Start Custom content-->
+    <!--End section medium for product event-->
+    <!--Start section large top for tabs content-->
+    <div class="section-large-top">
+      <div class="container">
+        <!--Tabs Shop-->
+        <div class="tz-shortcode-tabs">
+          <!--Tabs Header-->
+          <div class="tz-tabs-header">
+            <h2 class="tz-tabs-title pull-left">Dernières créations</h2>
+          </div>
+          <!--End tab header-->
+          <!--Tab content-->
+          <div class="tab-content">
+            <!--Tab item-->
+            <div class="tab-pane active" id="one_read">
+              <div class="row">
+                <div class="col-md-4 col-sm-6">
+                  <!--Start product item-->
+                  <div class="product-item">
+                    <div class="product-thubnail">
+                      <img src="https://images.pexels.com/photos/1134166/pexels-photo-1134166.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="product 1" />
+                      <div class="product-meta">
+                        <a class="add-to-cart" href="shop-cart.html">Ajouter au panier</a>
+                        <span class="quick-view">
+                          <a href="#">Aperçu</a>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="product-infomation">
+                      <h4><a href="single-product.html">Dessin 1 (x3)</a></h4>
+                      <span class="product-price">20€</span>
+                    </div>
+                  </div>
+                  <!--End product item-->
+                </div>
+              </div>
+            </div>
+            <!--End tab item-->
+          </div>
+          <!--End tab content-->
+        </div>
+        <!--End Tabs Shop-->
+      </div>
+    </div>
+    <!--End section large top for tabs content-->
+    <!--Start section large top for tabs content-->
+    <div class="section-large-top">
+      <div class="container">
+        <!--Start class Shortcode tabs-->
+        <div class="tz-shortcode-tabs">
+          <!--Tabs Header-->
+          <div class="tz-tabs-header">
+            <h2 class="tz-tabs-title pull-left">Populaires</h2>
+          </div>
+          <!--End Tabs header-->
+          <!--Start Tabs content-->
+          <div class="tab-content">
+            <!--Tab item-->
+            <div class="tab-pane active" id="baby_seats">
+              <!--Start product-->
+              <div class="row row-item">
+                <div class="col-md-3 col-sm-6">
+                  <!--Start product item-->
+                  <div class="product-item">
+                    <div class="product-thubnail">
+                      <img src="https://images.pexels.com/photos/1134166/pexels-photo-1134166.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="product 4" />
+                      <div class="product-meta">
+                        <a class="add-to-cart" href="shop-cart.html">Ajouter au panier</a>
+                        <span class="quick-view">
+                          <a href="#">Aperçu</a>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="product-infomation">
+                      <h4><a href="single-product.html">Dessin 2 (x4)</a></h4>
+                      <span class="product-price">30€</span>
+                    </div>
+                  </div>
+                  <!--End product item-->
+                </div>
+              </div>
+              <div class="row row-item">
+                <div class="col-md-3 col-sm-6">
+                  <!--Start product item-->
+                  <div class="product-item">
+                    <div class="product-thubnail">
+                      <img src="https://images.pexels.com/photos/1134166/pexels-photo-1134166.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="product 2" />
+                      <div class="product-meta">
+                        <a class="add-to-cart" href="shop-cart.html">Ajouter au panier</a>
+                        <span class="quick-view">
+                          <a href="#">Aperçu</a>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="product-infomation">
+                      <h4><a href="single-product.html">Dessin 3 (x4)</a></h4>
+                      <span class="product-price">30€</span>
+                    </div>
+                  </div>
+                  <!--End product item-->
+                </div>
+              </div>
+              <!--End product-->
+            </div>
+            <!--End tab item-->
+            <!--Tab item-->
+            <!--End tabs content-->
+          </div>
+          <!--End class Shortcode tabs-->
+        </div>
+      </div>
+      <!--End section large top for tabs content-->
+      <section class="parallax background-parallax" style="background-position: 30% 6px;">
         <div class="container">
-            <div class="box-shadow section-small">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="custom-content">
-                            <h3>Livraison par mail</h3>
-                            <p>7j/7 24h/24</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="custom-content border-left">
-                            <h3>Haute Résolution</h3>
-                            <p>Nos dessins sont réalisés pour rendre parfaitement sur tout vos appareils</p>
-                            
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="custom-content border-left">
-                            <h3>Offrez à un ami</h3>
-                            <p>Saisissez son email au moment du paiement</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          <!--Get In Touch-->
+          <div class="get-in-touch">
+            <h3>Restons en contact</h3>
+            <p>Vous voulez proposer une idée de dessin?</p>
+            <a class="buynow" href="contact.html">Contactez-moi</a>
+          </div>
+          <!--End Get In Touch-->
         </div>
-        <!--End custom content-->
-                <!--Start section medium for product event-->
-                <div class="section-medium bk-gray">
-                    <div class="container">
-        
-                        <!--Product event-->
-                        <div class="product-event">
-                            <div class="row">
-                                <div class="col-md-6">
-        
-                                    <!--Thumnbail-->
-                                    <div class="event-thumbail">
-                                        <img src="https://images.pexels.com/photos/65767/pexels-photo-65767.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="product event">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-        
-                                    <!--Product content-->
-                                    <ul class="product-event-content">
-                                        <li>
-                                            <div id="defaultCountdown" class="tzCountdown is-countdown"><span class="countdown-row countdown-show3"><span class="countdown-section"><span class="countdown-amount">24</span><span class="countdown-period">Hours</span></span><span class="countdown-section"><span class="countdown-amount">0</span><span class="countdown-period">Minutes</span></span><span class="countdown-section"><span class="countdown-amount">0</span><span class="countdown-period">Seconds</span></span></span></div>
-                                        </li>
-                                        <li>
-                                            <h3><a href="single-product.html">Dessin Naruto</a></h3>
-                                            <span class="event-price">10€</span>
-                                        </li>
-                                        <li class="product-event-attr">
-                                            <span class="tz-color">
-                                                Format:
-                                                <i class="">JPEG</i>
-                                            </span>
-                                        </li>
-                                        <li class="event-footer">
-                                            <a href="shop-cart.html" class="add-to-cart">Ajouter au panier</a>
-                                        </li>
-                                    </ul>
-                                    <!--End Product content-->
-        
-                                </div>
-                            </div>
-                        </div>
-                        <!--End product event-->
-        
-                    </div>
-                </div>
-                <!--End section medium for product event-->
-
-        <!--Start section large top for tabs content-->
-        <div class="section-large-top">
-            <div class="container">
-                <!--Tabs Shop-->
-                <div class="tz-shortcode-tabs">
-
-                    <!--Tabs Header-->
-                    <div class="tz-tabs-header">
-                        <h2 class="tz-tabs-title pull-left">Dernières créations</h2>
-                    </div>
-                    <!--End tab header-->
-
-                    <!--Tab content-->
-                    <div class="tab-content">
-
-                        <!--Tab item-->
-                        <div class="tab-pane active" id="one_read">
-                            <div class="row">
-                                <div class="col-md-4 col-sm-6">
-
-                                    <!--Start product item-->
-                                    <div class="product-item">
-                                        <div class="product-thubnail">
-                                            <img src="https://images.pexels.com/photos/1134166/pexels-photo-1134166.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="product 1" />
-                                            <div class="product-meta">
-                                                <a class="add-to-cart" href="shop-cart.html">Ajouter au panier</a>
-                                                <span class="quick-view">
-                                                    <a href="#">Aperçu</a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="product-infomation">
-                                            <h4><a href="single-product.html">Dessin 1 (x3)</a></h4>
-                                            <span class="product-price">20€</span>
-
-                                        </div>
-                                    </div>
-                                    <!--End product item-->
-
-                                </div>
-                            </div>
-                        </div>
-                        <!--End tab item-->
-
-
-                        
-                        
-
-                    </div>
-                    <!--End tab content-->
-
-                </div>
-                <!--End Tabs Shop-->
-            </div>
-        </div>
-        <!--End section large top for tabs content-->
-
-
-
-        <!--Start section large top for tabs content-->
-        <div class="section-large-top">
-            <div class="container">
-
-                <!--Start class Shortcode tabs-->
-                <div class="tz-shortcode-tabs">
-
-                    <!--Tabs Header-->
-                    <div class="tz-tabs-header">
-                        <h2 class="tz-tabs-title pull-left">Populaires</h2>
-
-                    </div>
-                    <!--End Tabs header-->
-
-                    <!--Start Tabs content-->
-                    <div class="tab-content">
-
-                        <!--Tab item-->
-                        <div class="tab-pane active" id="baby_seats">
-                            <!--Start product-->
-                            <div class="row row-item">
-
-                                <div class="col-md-3 col-sm-6">
-
-                                    <!--Start product item-->
-                                    <div class="product-item">
-                                        <div class="product-thubnail">
-                                            <img src="https://images.pexels.com/photos/1134166/pexels-photo-1134166.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="product 4" />
-                                            <div class="product-meta">
-                                                <a class="add-to-cart" href="shop-cart.html">Ajouter au panier</a>
-                                                <span class="quick-view">
-                                                    <a href="#">Aperçu</a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="product-infomation">
-                                            <h4><a href="single-product.html">Dessin 2 (x4)</a></h4>
-                                            <span class="product-price">30€</span>
-                                            
-                                        </div>
-                                    </div>
-                                    <!--End product item-->
-
-                                </div>
-                            </div>
-                            <div class="row row-item">
-                                
-                                <div class="col-md-3 col-sm-6">
-                                    <!--Start product item-->
-                                    <div class="product-item">
-                                        <div class="product-thubnail">
-                                            <img src="https://images.pexels.com/photos/1134166/pexels-photo-1134166.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="product 2" />
-                                            <div class="product-meta">
-                                                <a class="add-to-cart" href="shop-cart.html">Ajouter au panier</a>
-                                                <span class="quick-view">
-                                                    <a href="#">Aperçu</a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="product-infomation">
-                                            <h4><a href="single-product.html">Dessin 3 (x4)</a></h4>
-                                            <span class="product-price">30€</span>
-                                        
-                                        </div>
-                                    </div>
-                                    <!--End product item-->
-
-                                </div>
-                            </div>
-                            <!--End product-->
-                        </div>
-                        <!--End tab item-->
-
-                        <!--Tab item-->
-                        
-                    <!--End tabs content-->
-
-                </div>
-                <!--End class Shortcode tabs-->
-
-            </div>
-        </div>
-        <!--End section large top for tabs content-->
-
-        <section class="parallax background-parallax" style="background-position: 30% 6px;">
-            <div class="container">
-
-                <!--Get In Touch-->
-                <div class="get-in-touch">
-                    <h3>Restons en contact</h3>
-                    <p>Vous voulez proposer une idée de dessin?</p>
-                    <a class="buynow" href="contact.html">Contactez-moi</a>
-                </div>
-                <!--End Get In Touch-->
-
-            </div>
-        </section>
-        
-
-
-       
-
-
-               
-
+      </section>
     </div>
     <!--End class site-->
-
-   
-</body>
+  </body>
 </html>
