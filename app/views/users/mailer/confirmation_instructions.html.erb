@@ -1,5 +1,14 @@
-<p>Welcome <%= @email %>!</p>
+<h2> Bienvenus chez ankan'art !</h2>
 
-<p>You can confirm your account email through the link below:</p>
+<p>Salut a toi possesseur de l'adresse mail <%= @email %>!</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p>Bientot tu pourras faire le pleins de superbe artworks.</p>
+
+<h4> Mais avant cela !</h4>
+<p>il te faut confirmer que l'adresse mail est bien la tienne ! </p>
+
+
+<h5> Clique sur ce lien => </h5><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %>
+
+<p> Et nous esperons voir tres vite les chiffres de ta carte bleu s'afficher dans nos Databases</p>
+<h4> A bientôt ! </h4>

@@ -5,7 +5,7 @@ class ArtworksController < ApplicationController # verifier les REDIRECT # gerer
 
   def show
     @artworks = Artwork.all
-    @artwork = Artworks.find(params[:id])
+    @artwork = Artwork.find(params[:id])
   end
 
   def new
@@ -13,13 +13,8 @@ class ArtworksController < ApplicationController # verifier les REDIRECT # gerer
   end
 
   def create
-    @artwork =
-      Artwork.create(
-        title: params[:title],
-        price: params[:price],
-        description: params[:description],
-        category_id: params[:category_id]
-      )
+    @artwork = Artwork.new(artwork_params)
+
     if @artwork.save
       redirect_to artworks_path
       flash[:notice_good] = 'Artwork ajouté !'
@@ -52,8 +47,15 @@ class ArtworksController < ApplicationController # verifier les REDIRECT # gerer
   end
 
   def destroy
-    @artwork_to_delete = Artworks.find(params[:id])
+    @artwork_to_delete = Artwork.find(params[:id])
     @artwork_to_delete.destroy
     redirect_to root_path
   end
+
+private
+
+  def artwork_params
+    params.require(:artwork).permit(:title, :description, :price, :category_id)
+  end
+
 end
