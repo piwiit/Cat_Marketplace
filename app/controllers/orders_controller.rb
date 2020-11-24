@@ -1,4 +1,12 @@
 class OrdersController < ApplicationController
+  def index
+    @orders = Order.all
+  end
+  
+  def show
+    @order = Order.find(params[:id])
+  end
+
   def new
   end
 
@@ -11,12 +19,8 @@ class OrdersController < ApplicationController
   def update
   end
 
-  def show
+   def destroy
+    @order_to_delete = Order.find(params[:id])
   end
-
-  def index
-  end
-
-  def destroy
-  end
+  
 end

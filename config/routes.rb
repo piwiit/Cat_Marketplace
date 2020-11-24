@@ -9,7 +9,9 @@ Rails.application.routes.draw do
     resources :carts
     resources :orders
   end
-  resources :artworks
+  resources :artworks do 
+    resources :pictures
+  end 
   resources :categories
   resources :charges
 

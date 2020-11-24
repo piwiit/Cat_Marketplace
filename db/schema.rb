@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 2020_11_23_132223) do
   create_table "artworks", force: :cascade do |t|
     t.string "title"
     t.float "price"
-    t.string "image"
     t.text "description"
     t.bigint "category_id"
     t.datetime "created_at", precision: 6, null: false
@@ -48,7 +47,7 @@ ActiveRecord::Schema.define(version: 2020_11_23_132223) do
   end
 
   create_table "carts", force: :cascade do |t|
-    t.boolean "Is_archived", default: false
+    t.boolean "is_archived", default: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -83,7 +82,6 @@ ActiveRecord::Schema.define(version: 2020_11_23_132223) do
     t.string "firstname", default: "", null: false
     t.string "lastname", default: "", null: false
     t.integer "age", null: false
-    t.text "description"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

@@ -13,10 +13,7 @@ Cart.destroy_all
 Category.destroy_all
 JoinArtCart.destroy_all
 
-users = []
-orders = []
-artworks = []
-carts = []
+
 categories_names = [
   'Classic',
   'Epic',
@@ -31,38 +28,39 @@ categories_names = [
   'Travel',
   'Superhero'
 ]
-categories = []
+
 
 10.times do
-  users <<
+  
     User.create(
       firstname: Faker::Name.first_name,
       lastname: Faker::Name.last_name,
       email: Faker::Internet.email(domain: 'yopmail'),
-      description:
-        Faker::Lorem.sentence(
-          word_count: 10, supplemental: true, random_words_to_add: 5
-        ),
-      age: rand(18..99),
+      age: rand(13..99),
       password: 'azerty',
       password_confirmation: 'azerty'
     )
 end
 
-10.times { carts << Cart.create(user: users.sample, Is_archived: false) }
+10.times do 
+  Cart.create(user_id: User.ids.sample) 
+end
 
 10.times do
-  orders <<
     Order.create(
       reception_email: Faker::Internet.email(domain: 'yopmail'),
       total_price: rand(5..1000),
-      cart: carts.sample
+      cart_id: Cart.ids.sample
     )
 end
-10.times { categories << Category.create(name: categories_names.sample) }
+
+
 
 10.times do
-  artworks <<
+  Category.create(name: categories_names.sample) 
+end
+
+10.times do
     Artwork.create(
       title: Faker::Book.title,
       price: Faker::Number.decimal(l_digits: 3, r_digits: 2),
@@ -70,8 +68,10 @@ end
         Faker::Lorem.sentence(
           word_count: 10, supplemental: true, random_words_to_add: 5
         ),
-      category: categories.sample
+      category_id: Category.ids.sample
     )
 end
 
-10.times { JoinArtCart.create(cart: carts.sample, artwork: artworks.sample) }
+10.times do
+   JoinArtCart.create(cart_id: Cart.ids.sample, artwork_id: Artwork.ids.sample)
+end

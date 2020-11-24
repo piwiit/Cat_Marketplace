@@ -6,8 +6,7 @@ class User < ApplicationRecord #  :lockable, :timeoutable, :trackable and :omnia
          :confirmable,
          :validatable
   has_many :carts
-  validates_presence_of :firstname, :lastname, :age, :description
+  validates_presence_of :firstname, :lastname, :age
   validates :age,
-            numericality: { only_integer: true, greater_than_or_equal_to: 18 }
-  validates :description, length: { in: 10...5000 }
+            numericality: { only_integer: true, greater_than_or_equal_to: 13 }
 end
