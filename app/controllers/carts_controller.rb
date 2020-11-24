@@ -1,4 +1,7 @@
 class CartsController < ApplicationController
+
+    # PRECISER les bon params, ajouter aguilleur AJAX, et les redirect du NEW et UPDATE
+  # verifier les REDIRECT
   def index
     @carts = Cart.all
   end
