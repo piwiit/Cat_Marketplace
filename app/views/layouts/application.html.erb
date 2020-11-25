@@ -16,7 +16,7 @@
         <div class="container">
           <!--Start header content-->
           <div class="header-content">
-            <h3 class="tz-logo pull-left"><a href="index.html"><img src="assets/logo.png" alt="home" /></a></h3>
+            <h3 class="tz-logo pull-left"><a href="index.html"><%= image_tag "logo.png" %></a></h3>
             <div class="tz-search pull-right">
               <!--Start form search-->
               <form>
@@ -88,7 +88,7 @@
               <!--Mini cart-->
               <ul class="cart-inner">
                 <li class="mini-cart-content">
-                  <div class="mini-cart-img"><img src="assets/product/product-cart1.png" alt="product search one"></div>
+                  <div class="mini-cart-img"> <%= image_tag "product/product-cart1.png" %></div>
                   <div class="mini-cart-ds">
                     <h6><a href="single-product.html">Dessin 1</a></h6>
                     <span class="mini-cart-meta">
@@ -98,7 +98,7 @@
                       </span>
                     </span>
                   </div>
-                  <span class="mini-cart-delete"><img src="assets/delete.png" alt="delete"></span>
+                  <span class="mini-cart-delete"> <%= image_tag "delete.png" %></span>
                 </li>
                 <li class="mini-subtotal">
                   <span class="subtotal-content">
@@ -113,7 +113,6 @@
               </ul>
               <!--End mini cart-->
             </li>
-          </ul>
           <!--End Shop meta-->
           <!--navigation mobi-->
           <button data-target=".nav-collapse" class="btn-navbar tz_icon_menu" type="button">
