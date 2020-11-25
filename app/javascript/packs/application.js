@@ -8,22 +8,12 @@ require("@rails/activestorage").start()
 require("turbolinks").start()
 require("channels")
 
+console.log("Avant")
 
-require("jquery.themepunch.revolution.min")
-require("jquery.themepunch.tools.min")
-require("jquery.parallax-1.1.3")
-require("jquery.plugin.min")
-require("jquery-ui")
-require("jquery.countdown.min")
-require("jquery.min")
-require("custom")
-require("html5shiv.min")
-require("bootstrap")
-require("off-canvas")
-require("respond.min")
-require("custom-rs")
+require("packs/custom")
 
 
+console.log("A toi qui lit ce message : tu es une belle personne.")
 
 
 
