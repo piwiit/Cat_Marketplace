@@ -20,6 +20,7 @@
         <td><%=artwork.price%> €</td>
         <td><%=artwork.description%></td>
         <td><%=artwork.category_id%></td>
+        <td><%= link_to 'Ajouter au panier',join_art_carts_path(artwork_id:artwork.id), method: 'POST'%></td>
       </tr>
     <%end%>
   </tbody>
