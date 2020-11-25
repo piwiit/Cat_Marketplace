@@ -1,2 +1,134 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<!DOCTYPE html>
+<!-- Voir lignes 260-300 poru footer -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Register</title>
+
+
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    
+
+      <div class="section-my-profile justify-content-center">
+        <div class="container-profile col-md-8 col-sm-12">
+          <h1 class="text-center">Hey <%=@user.firstname%></h1> 
+          <br/>
+          <div
+            class="section section-profile box-shadow justify-content-between"
+          >
+            <div class="col-md-8">
+              <div class="p-profile">
+                <i class="fas fa-user"> <%=@user.firstname%></i>
+                <% if @user_order.count > 0 %>
+                <div class="pull-right">
+                  <%= @user_order.count%> commandes <i class="fas fa-palette"></i>
+                </div>
+                <% else %>
+                <div class="pull-right">
+                  0 commande <i class="fas fa-palette"></i>
+                </div>
+                <% end %>
+              </div>
+              <div class="p-profile">
+                <i class="fas fa-users"> <%=@user.lastname%></i>
+              </div>
+              <div class="p-profile">
+                <i class="fas fa-birthday-cake"> <%=@user.age%> ans</i>
+              </div>
+              <br>
+              <div class="card-my-profile">
+                <div class="p-profile">
+Viande à chien de mosus d'étole de sacrament de cul de purée de charrue de marde de boswell de crucifix de bout d'crisse de bâtard de colon de torvisse de saintes fesses de sapristi de cibouleau de gériboire de crime de verrat de maudit de batince de cochonnerie de batèche de saint-sacrament de géritole de crisse.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <img
+                src="https://i.skyrock.net/0868/82420868/pics/3080829335_1_3_FUrIXNRs.png"
+                alt="Error img src"
+                style="width: auto; height: 260px"
+              />
+            </div>
+          </div>
+          <div class="card-profile justify-content-around">
+            <b class="col-md-2">COMMANDES</b>
+            <b class="col-md-2">DATE</b>
+            <b class="col-md-2">TOTAL</b>
+            <b class="col-md-1"><i class="fas fa-print"></i></b>
+          </div>
+          <%if @user_order.count > 0%>
+          <% number = 0 %>
+          <% @user_order.each do |order|%>
+          <div class="card-profile justify-content-around">
+            <div class="col-md-2">Commande nº <%=number +=1%></div>
+            <div class="col-md-2"><%=order.created_at.strftime("%d/%m/%Y")%></div>
+            <div class="col-md-2"><%=order.total_price.to_i%></div>
+            <div class="col-md-1"><a href="https://www.youtube.com/watch?v=qlbz6P3q0tw" target="_blank"><i class="fas fa-print"></i></a></div>
+          </div>
+          <%end%>
+          <%else%>
+          <div class="card-profile justify-content-around">
+            <div class="col-md-2">Vous n'avez</div>
+            <div class="col-md-2">pas encore</div>
+            <div class="col-md-2">commandé</div>
+            <div class="col-md-1"><a href="https://www.youtube.com/watch?v=qlbz6P3q0tw" target="_blank"><i class="fas fa-print"></i></a></div>
+          </div>
+          <%end%>
+        </div>
+      </div>
+
+      <!--Start Footer-->
+      <footer class="tz-footer">
+        <!--Copy right-->
+        <div class="tz-copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-sm-6">
+                <div class="p-footer">
+                  Copyright &copy; 2020 par la team vocal 1 de THP. All rights
+                  reserved.
+                </div>
+              </div>
+              <!--Social networks-->
+              <div class="col-md-6 col-sm-6">
+                <div class="pull-right">
+                  <ul class="tz-social">
+                    <li>
+                      <a class="fa fa-facebook" href="#"></a>
+                    </li>
+                    <li>
+                      <a class="fa fa-twitter" href="#"></a>
+                    </li>
+                    <li>
+                      <a class="fa fa-google-plus" href="#"></a>
+                    </li>
+                    <li>
+                      <a class="fa fa-tumblr" href="#"></a>
+                    </li>
+                    <li>
+                      <a class="fa fa-flickr" href="#"></a>
+                    </li>
+                    <li>
+                      <a class="fa fa-pinterest" href="#"></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--End copy right-->
+      </footer>
+    </div>
+    <!--End class site-->
+
+  </body>
+</html>

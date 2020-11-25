@@ -8,6 +8,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
+    @user_cart = Cart.where(user_id: current_user.id)
+    @user_order = Order.where(cart_id: @user_cart.ids)
   end
 
   def new
