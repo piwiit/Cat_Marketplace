@@ -5,21 +5,24 @@
 
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
+require("turbolinks").start()
 require("channels")
 
-require("js/bootstrap.min")
-require("js/custom")
-require("js/html5shiv.min")
-require("js/jquery-ui")
-require("js/jquery.countdown.min")
-require("js/jquery.min")
-require("js/jquery.parallax-1.1.3")
-require("js/jquery.plugin.min")
-require("js/off-canvas")
-require("js/respond.min")
-require("js/custom-rs")
-require("js/jquery.themepunch.revolution.min")
-require("js/jquery.themepunch.tools.min")
+
+require("jquery.themepunch.revolution.min")
+require("jquery.themepunch.tools.min")
+require("jquery.parallax-1.1.3")
+require("jquery.plugin.min")
+require("jquery-ui")
+require("jquery.countdown.min")
+require("jquery.min")
+require("custom")
+require("html5shiv.min")
+require("bootstrap")
+require("off-canvas")
+require("respond.min")
+require("custom-rs")
+
 
 
 
