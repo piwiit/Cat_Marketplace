@@ -10,16 +10,17 @@ class ArtworksController < ApplicationController # verifier les REDIRECT # gerer
 
   def new
     @artwork = Artwork.new
+    @artworks = Artwork.all
+
   end
 
   def create
     @artwork = Artwork.new(artwork_params)
-
     if @artwork.save
-      redirect_to root_path
+      redirect_to artworks_path
       flash[:notice_good] = 'Artwork ajouté !'
     else
-      redirect_to root_path
+      redirect_to artworks_path
       flash[:notice_bad] = 'Artwork non crée !'
     end
   end
