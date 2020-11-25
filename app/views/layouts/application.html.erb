@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CatMarketplace</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -10,6 +9,8 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
   </head>
   <body>
+   <div id="page-container">
+   <div id="content-wrap">
     <div class="tz-site">
       <!--Start id tz header-->
       <header id="tz-header" class="bk-white">
@@ -44,13 +45,17 @@
             <!--Main Menu-->
             <ul class="tz-main-menu pull-left nav-collapse">
               <li>
-                <a href="/">Accueil</a>
+                <%= link_to "Accueil", root_path %>
               </li>
               <li>
-                <a href="shop.html">
+                <%= link_to "Artwork", artworks_path %>
+              </li>
+              <li>
+                <a>
                   Catégories
                   <span class="red-light">Nouveautés!</span>
                 </a>
+                
                 <ul class="sub-menu">
                   <li>
                     <a href="shop-rightsidebar.html">Catégorie 1</a>
@@ -78,16 +83,16 @@
             <!--End Main menu-->
             <!--Shop meta-->
             <% if current_user %>
-              <%=render 'layouts/connected'%>
+          <%=render 'layouts/islogin'%>
             <% else %>
-              <%=render 'layouts/unco'%>
+          <%=render 'layouts/loginmodal'%>
             <% end %>
             <li class="tz-mini-cart">
               <a href="/users/:user_id/carts/:id"><strong>2</strong>Panier : 199€</a>
               <!--Mini cart-->
               <ul class="cart-inner">
                 <li class="mini-cart-content">
-                  <div class="mini-cart-img"><%= image_tag "logo.png" %></div>
+                  <div class="mini-cart-img"><%image_tag "product/product-cart1.png"%></div>
                   <div class="mini-cart-ds">
                     <h6><a href="single-product.html">Dessin 1</a></h6>
                     <span class="mini-cart-meta">
@@ -123,5 +128,47 @@
       </nav>
     </header>
     <%= yield %>
+
+       <footer class="tz-footer">
+        
+      <!--Copy right-->
+      <div class="tz-copyright">
+       
+        <div class="container">
+            <div class="footer-main">
+              <div id="footer-left">
+ 
+                      <div class="p-footer">Copyright &copy; 2020  par la team vocal 1 de THP. All rights reserved.</div> 
+                  </div>
+                  <!--Social networks-->
+                      <div  id="footer-right" >
+                          <ul class="tz-social">
+                              <li>
+                                  <a class="fa fa-facebook" href="#"></a>
+                              </li>
+                              <li>
+                                  <a class="fa fa-twitter" href="#"></a>
+                              </li>
+                              <li>
+                                  <a class="fa fa-google-plus" href="#"></a>
+                              </li>
+                              <li>
+                                  <a class="fa fa-tumblr" href="#"></a>
+                              </li>
+                              <li>
+                                  <a class="fa fa-flickr" href="#"></a>
+                              </li>
+                              <li>
+                                  <a class="fa fa-pinterest" href="#"></a>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div></div>
+      <!--End copy right-->
+  </footer>
   </body>
 </html>

@@ -1,35 +1,50 @@
-<%= form_with(model: artwork, local: true) do |form| %>
-  <% if artwork.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(artwork.errors.count, "error") %> prohibited this artwork from being saved:</h2>
-      <ul>
-        <% artwork.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title,required: true %>
+<section class="default-page">
+  <div class="container">
+    <div class="tz-register">
+      <h2>Ajouter un artwork</h2>
+      <% if artwork.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(artwork.errors.count, "error") %>
+            prohibited this artwork from being saved:</h2>
+          <ul>
+            <% artwork.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <%= form_with(model: artwork, local: true) do |form| %>
+      <div class="form-row-wide space-between">
+        <p class="form-row form-row-wide">
+          <%= form.label :title %>
+          <%= form.text_field :title, required: true, placeholder: "Titre" %>
+        </p>
+        <p class="form-row form-row-wide">
+          <%= form.label :category_id %>
+          <%= form.select :category_id, Artwork.all.map{|artwork| [artwork.category.name]}.uniq, { include_blank: true }, required: true, placeholder: "Choisir une catégorie" %>
+        </p>
+
+        <p class="form-row form-row-wide">
+          <%= form.label :picture %>
+          <%= form.file_field :picture, accept:"image/jpeg, image/gif, image/png" %>
+        </p>
+
+        <p class="form-row form-row-wide">
+          <%= form.label :description %>
+          <%= form.text_area :description, required: true,min: 10, max: 5000, placeholder: "Décrire l'oeuvre" %>
+        </p>
+        <p class="form-row form-row-wide">
+          <%= form.label :price %>
+          <%= form.number_field :price , required: true,min: 1, step: 0.01, placeholder: "Prix"%>
+        </p>
+        <br>
+        <div class="form-row form-row-wide">
+          <%= form.submit "Créer l' artwork", class: "button-class btn-block"%>
+        </div>
+      </div>
+    <% end %>
+
+    <!--End form-->
   </div>
-  <div class="field">
-    <%= form.label :category_id %>
-    <%= form.number_field :category_id,required: true %>
-  </div>
-  <div class="field">
-    <%= form.label :image %><br />
-    <%= form.file_field :image, accept:"image/jpeg, image/gif, image/png" %>
-  </div>
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description,required: true,min: 10, max: 5000 %>
-  </div>
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price ,required: true,min: 1, step: 0.01%>
-  </div>
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
+</section>

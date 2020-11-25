@@ -9,8 +9,7 @@
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
         </div>
         <p class="form-footer">
-          <a href="#">Mot de passe oublié ?</a>
-          <a href="shop-register.html" class="pull-right">Pas encore inscrit ?</a>
+          <%= link_to "Pas encore inscrit ?", new_user_registration_path %>
         </p>
         <br/>
         <div class="form-row form-row-wide">
