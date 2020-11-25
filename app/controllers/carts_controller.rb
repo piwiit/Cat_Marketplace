@@ -6,10 +6,10 @@ class CartsController < ApplicationController
     @carts = Cart.all
   end
   
-  def show
-    @cart = Cart.find(params[:id])
+  # def show
+  #   @cart = Cart.find(params[:id])
 
-  end
+  # end
 
   def new
     @cart = Cart.new
