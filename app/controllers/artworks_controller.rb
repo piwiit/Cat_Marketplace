@@ -10,16 +10,17 @@ class ArtworksController < ApplicationController # verifier les REDIRECT # gerer
 
   def new
     @artwork = Artwork.new
+    @artworks = Artwork.all
+
   end
 
   def create
     @artwork = Artwork.new(artwork_params)
-
     if @artwork.save
-      redirect_to root_path
+      redirect_to artworks_path
       flash[:notice_good] = 'Artwork ajouté !'
     else
-      redirect_to root_path
+      redirect_to artworks_path
       flash[:notice_bad] = 'Artwork non crée !'
     end
   end
@@ -35,7 +36,8 @@ class ArtworksController < ApplicationController # verifier les REDIRECT # gerer
         :title,
         :price,
         :description,
-        :category_id
+        :category_id,
+        :picture
       )
     @artwork_to_update.update(artwork_params)
 
@@ -52,10 +54,17 @@ class ArtworksController < ApplicationController # verifier les REDIRECT # gerer
     redirect_to root_path
   end
 
-private
+  private
 
   def artwork_params
-    params.require(:artwork).permit(:title, :description, :price, :category_id, :picture)
-  end
 
+    params.require(:artwork).permit(
+      :title,
+      :description,
+      :price,
+      :picture,
+      :category_id
+    )
+
+  end
 end
