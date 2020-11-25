@@ -19,7 +19,7 @@
         <% end %>
         <p class="form-footer">
           <%= link_to "Mot de passe oublié ?", new_user_password_path %>
-          <a href="shop-register.html" class="pull-right">Pas encore inscrit ?</a>
+          <%= link_to "Pas encore inscrit ?", new_user_registration_path, class: "pull-right" %>
         </p>
         <%= f.submit "Se connecter", class: "button_class btn-block" %>
       <% end %>
