@@ -75,12 +75,11 @@
             </ul>
             <!--End Main menu-->
             <!--Shop meta-->
-<% unless logged_in? %>
-
-<%= render "layouts/islogin" %>
-<%else%>
-<p> Tu n'es pas connecté </p>
-<%end%>
+<% if current_user %>
+  <%= render "layouts/islogin"%>          
+<%else %>
+<%= render "layouts/loginmodal"%>   
+<% end%>
               <li class="tz-mini-cart">
                 <a href="/users/:user_id/carts/:id"><strong>2</strong>Panier : 199€</a>
                 <!--Mini cart-->

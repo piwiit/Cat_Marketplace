@@ -1,12 +1,10 @@
 class ApplicationController < ActionController::Base
-  include SessionHelper
+  # include SessionHelper
+  include ApplicationHelper
   
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def current_user
-    User.find_by(id: session[:user_id])
-  end
 
   private
 
