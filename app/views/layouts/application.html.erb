@@ -78,6 +78,7 @@
             </ul>
             <!--End Main menu-->
             <!--Shop meta-->
+<<<<<<< HEAD
             <% if current_user %>
               <%=render 'layouts/connected'%>
             <% else %>
@@ -95,6 +96,27 @@
                       <a href="single-product.html">2650 €</a>
                       <span class="mini-meta">
                         <span class="mini-color">Livraison: 24h <i class="far fa-clock"></i></span>
+=======
+<% unless logged_in? %>
+
+<%= render "layouts/islogin" %>
+<%else%>
+<p> Tu n'es pas connecté </p>
+<%end%>
+              <li class="tz-mini-cart">
+                <a href="/users/:user_id/carts/:id"><strong>2</strong>Panier : 199€</a>
+                <!--Mini cart-->
+                <ul class="cart-inner">
+                  <li class="mini-cart-content">
+                    <div class="mini-cart-img"><img src="assets/product/product-cart1.png" alt="product search one"></div>
+                    <div class="mini-cart-ds">
+                      <h6><a href="single-product.html">Dessin 1</a></h6>
+                      <span class="mini-cart-meta">
+                        <a href="single-product.html">2650 €</a>
+                        <span class="mini-meta">
+                          <span class="mini-color">Livraison: 24h <i class="far fa-clock"></i></span>
+                        </span>
+>>>>>>> master
                       </span>
                     </span>
                   </div>

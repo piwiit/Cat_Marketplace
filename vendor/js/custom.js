@@ -7,7 +7,7 @@ jQuery(document).ready(function(){
     // countdow for product event
     if( jQuery('.tzCountdown').length > 0 ){
         var austDay = new Date();
-        austDay = new Date(2015, 7 - 1, 26);
+        austDay = new Date(2022, 11, 20);
         jQuery('#defaultCountdown').countdown({until: austDay});
     }
 
