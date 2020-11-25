@@ -1,2 +1,11 @@
 <h1>Carts#show</h1>
-<p>Find me in app/views/carts/show.html.erb</p>
+<p>
+  <strong>User:</strong>
+  <%=@cart.user_id%>
+</p>
+<p>
+  <strong>Liste de nos produits</strong>
+  <% @cart.join_art_carts.each do |item|%>
+    <li><%= item.artwork.title%> =><%= link_to 'delete',join_art_cart_path(item.id), method: 'DELETE'%> </li>
+  <% end %>
+</p>
