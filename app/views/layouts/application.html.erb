@@ -3,8 +3,8 @@
   <head>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= javascript_pack_tag 'application'%>
+        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/8f239ccbef.js" crossorigin="anonymous"></script>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
   </head>
@@ -45,7 +45,10 @@
             <!--Main Menu-->
             <ul class="tz-main-menu pull-left nav-collapse">
               <li>
-                <a href="/">Accueil</a>
+                <%= link_to "Accueil", root_path %>
+              </li>
+              <li>
+                <%= link_to "Artwork", artworks_path %>
               </li>
               <li>
                 <a href="shop.html">
@@ -71,7 +74,8 @@
                 </ul>
               </li>
               <li>
-                <a href="/">Contact</a>
+
+                 <%= link_to "Contact", contact_index_path %>
               </li>
               <li>
               </li>
@@ -166,5 +170,7 @@
     </div></div>
       <!--End copy right-->
   </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   </body>
 </html>
