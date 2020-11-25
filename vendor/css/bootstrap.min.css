@@ -2601,9 +2601,9 @@ input[type="search"] {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+/* Retrait d'un margin top 4px ci dessous */
 input[type="checkbox"],
 input[type="radio"] {
-  margin: 4px 0 0;
   margin-top: 1px \9;
   line-height: normal;
 }

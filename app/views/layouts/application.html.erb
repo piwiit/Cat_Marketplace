@@ -72,73 +72,57 @@
               <li>
                 <a href="/">Contact</a>
               </li>
+              <li>
+                <%= button_to "logout", destroy_user_session_path, method: :delete  %>
+              </li>
             </ul>
             <!--End Main menu-->
             <!--Shop meta-->
-            <ul class="tz-ecommerce-meta pull-right">
-              <li class="tz-header-login">
-                <a href="/users/sign_in">S'inscrire/Se Connecter</a>
-                <div class="tz-login-form">
-                  <form>
-                    <p class="form-content">
-                      <label for="username">Email</label>
-                      <input type="text" name="username" id="username" value="">
-                    </p>
-                    <p class="form-content">
-                      <label for="password">Mot de passe</label>
-                      <input type="password" name="username" id="password" value="">
-                    </p>
-                    <p class="form-footer">
-                      <a href="/users/password/new" style="margin-right: 10px;">Mot de passe perdu?</a>
-                      <button type="submit" class="pull-right button_class">Se connecter</button>
-                    </p>
-                    <p class="form-text">
-                      Créer un compte? <a href="/users/sign_up">Cliquez ici</a>
-                    </p>
-                  </form>
-                </div>
-              </li>
-              <li class="tz-mini-cart">
-                <a href="/users/:user_id/carts/:id"><strong>2</strong>Panier : 199€</a>
-                <!--Mini cart-->
-                <ul class="cart-inner">
-                  <li class="mini-cart-content">
-                    <div class="mini-cart-img"><img src="assets/product/product-cart1.png" alt="product search one"></div>
-                    <div class="mini-cart-ds">
-                      <h6><a href="single-product.html">Dessin 1</a></h6>
-                      <span class="mini-cart-meta">
-                        <a href="single-product.html">2650 €</a>
-                        <span class="mini-meta">
-                          <span class="mini-color">Livraison: 24h <i class="far fa-clock"></i></span>
-                        </span>
+            <% if current_user %>
+              <%=render 'layouts/connected'%>
+            <% else %>
+              <%=render 'layouts/unco'%>
+            <% end %>
+            <li class="tz-mini-cart">
+              <a href="/users/:user_id/carts/:id"><strong>2</strong>Panier : 199€</a>
+              <!--Mini cart-->
+              <ul class="cart-inner">
+                <li class="mini-cart-content">
+                  <div class="mini-cart-img"><img src="assets/product/product-cart1.png" alt="product search one"></div>
+                  <div class="mini-cart-ds">
+                    <h6><a href="single-product.html">Dessin 1</a></h6>
+                    <span class="mini-cart-meta">
+                      <a href="single-product.html">2650 €</a>
+                      <span class="mini-meta">
+                        <span class="mini-color">Livraison: 24h <i class="far fa-clock"></i></span>
                       </span>
-                    </div>
-                    <span class="mini-cart-delete"><img src="assets/delete.png" alt="delete"></span>
-                  </li>
-                  <li class="mini-subtotal">
-                    <span class="subtotal-content">
-                      Sous-total:
-                      <strong class="pull-right">2650 €</strong>
                     </span>
-                  </li>
-                  <li class="mini-footer">
-                    <a href="/users/:current_user.id/carts/:id" class="view-cart">Voir le panier</a>
-                    <a href="shop-checkout.html" class="check-out">Payer</a>
-                  </li>
-                </ul>
-                <!--End mini cart-->
-              </li>
-            </ul>
-            <!--End Shop meta-->
-            <!--navigation mobi-->
-            <button data-target=".nav-collapse" class="btn-navbar tz_icon_menu" type="button">
-              <i class="fa fa-bars"></i>
-            </button>
-            <!--End navigation mobi-->
-          </div>
-        </nav>
-        <!--End stat main menu-->
-      </header>
-      <%= yield %>
-    </body>
-  </html>
+                  </div>
+                  <span class="mini-cart-delete"><img src="assets/delete.png" alt="delete"></span>
+                </li>
+                <li class="mini-subtotal">
+                  <span class="subtotal-content">
+                    Sous-total:
+                    <strong class="pull-right">2650 €</strong>
+                  </span>
+                </li>
+                <li class="mini-footer">
+                  <a href="/users/:current_user.id/carts/:id" class="view-cart">Voir le panier</a>
+                  <a href="shop-checkout.html" class="check-out">Payer</a>
+                </li>
+              </ul>
+              <!--End mini cart-->
+            </li>
+          </ul>
+          <!--End Shop meta-->
+          <!--navigation mobi-->
+          <button data-target=".nav-collapse" class="btn-navbar tz_icon_menu" type="button">
+            <i class="fa fa-bars"></i>
+          </button>
+          <!--End navigation mobi-->
+        </div>
+      </nav>
+    </header>
+    <%= yield %>
+  </body>
+</html>
