@@ -75,29 +75,12 @@
             </ul>
             <!--End Main menu-->
             <!--Shop meta-->
-            <ul class="tz-ecommerce-meta pull-right">
-              <li class="tz-header-login">
-                <a href="/users/sign_in">S'inscrire/Se Connecter</a>
-                <div class="tz-login-form">
-                  <form>
-                    <p class="form-content">
-                      <label for="username">Email</label>
-                      <input type="text" name="username" id="username" value="">
-                    </p>
-                    <p class="form-content">
-                      <label for="password">Mot de passe</label>
-                      <input type="password" name="username" id="password" value="">
-                    </p>
-                    <p class="form-footer">
-                      <a href="/users/password/new" style="margin-right: 10px;">Mot de passe perdu?</a>
-                      <button type="submit" class="pull-right button_class">Se connecter</button>
-                    </p>
-                    <p class="form-text">
-                      Créer un compte? <a href="/users/sign_up">Cliquez ici</a>
-                    </p>
-                  </form>
-                </div>
-              </li>
+<% unless logged_in? %>
+
+<%= render "layouts/islogin" %>
+<%else%>
+<p> Tu n'es pas connecté </p>
+<%end%>
               <li class="tz-mini-cart">
                 <a href="/users/:user_id/carts/:id"><strong>2</strong>Panier : 199€</a>
                 <!--Mini cart-->
