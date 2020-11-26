@@ -111,6 +111,8 @@
                         <th>Prix total</th>
                         <td><span class="amount"><%=@cart.total %></span></td>
                       </tr>
+                      <tr class="order-total"> <%= button_to  "Procéder au paiement", cart_charges_path(params[:id]), method: 'POST'%>
+                      </tr>
                     </tbody>
 <<<<<<< HEAD
                     <!--End table body-->

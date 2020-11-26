@@ -43,7 +43,10 @@ class CartsController < ApplicationController
   def cart_params
     params.require(:cart).permit(:user_id)
   end
+<<<<<<< HEAD
 
   def total
   end
+=======
+>>>>>>> be47195dd1223db1c4fe1cd206166ace27318b53
 end

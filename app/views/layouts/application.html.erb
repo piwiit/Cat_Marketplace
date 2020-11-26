@@ -48,30 +48,7 @@
                     <%= link_to "Accueil", root_path %>
                   </li>
                   <li>
-                    <%= link_to "Artwork", artworks_path %>
-                  </li>
-                  <li>
-                    <a>
-                      Catégories
-                      <span class="red-light">Nouveautés!</span>
-                    </a>
-                    <ul class="sub-menu">
-                      <li>
-                        <a href="shop-rightsidebar.html">Catégorie 1</a>
-                      </li>
-                      <li>
-                        <a href="shop-cart.html">Catégorie 2</a>
-                      </li>
-                      <li>
-                        <a href="shop-checkout.html">Catégorie 3</a>
-                      </li>
-                      <li>
-                        <a href="shop-register.html">Catégorie 4</a>
-                      </li>
-                      <li>
-                        <a href="single-product.html">Catégorie 5</a>
-                      </li>
-                    </ul>
+                    <%= link_to "Artworks", artworks_path %>
                   </li>
                   <li>
                     <%= link_to "Contact", contact_index_path %>
@@ -84,10 +61,11 @@
             <!--End Main menu-->
             <!--Shop meta-->
             <% if current_user %>
-          <%=render 'registrations/islogin'%>
+              <%=render 'registrations/islogin'%>
             <% else %>
-          <%=render 'registrations/loginmodal' %>
+              <%=render 'registrations/loginmodal' %>
             <% end %>
+<<<<<<< HEAD
             <li class="tz-mini-cart">
             
               <a><strong>2</strong>Panier : 199€</a>
@@ -151,14 +129,104 @@
                       <a class="fa fa-pinterest" href="#"></a>
                     </li>
                   </ul>
+=======
+            <% if current_user %>
+              <li class="tz-mini-cart">
+                <%= link_to cart_path(current_user.id) do%><strong><%=find_user_cart.length%></strong>Panier : <%= find_total_price%>€<%end%>
+                <!--Mini cart-->
+              <%else %>
+                <li class="tz-mini-cart">
+                  <a><strong>0</strong>Panier : 0€</a>
+                <%end %>
+                <ul class="cart-inner">
+                  <%if current_user%>
+                    <% find_user_cart.each do |item|%>
+                      <li class="mini-cart-content">
+                        <div class="mini-cart-img"><%image_tag "product/product-cart1.png"%></div>
+                        <div class="mini-cart-ds">
+                          <%= link_to artwork_path(item.id) do %>
+                            <%=item.title%>
+                          <%end %>
+                          <span class="mini-cart-meta">
+                            <%= link_to artwork_path(item.id) do %>
+                              <%=item.price%> €
+                            <%end %>
+                            <span class="mini-meta">
+                              <span class="mini-color">Disponible <i class="far fa-clock"></i></span>
+                            </span>
+                          </li>
+                        <%end%>
+                      <% else %>
+                        <li class="mini-cart-content">
+                          <div class="mini-cart-img"><%image_tag "product/product-cart1.png"%></div>
+                          <div class="mini-cart-ds">
+                            <h6><a href="single-product.html">Panier vide</a></h6>
+                            <span class="mini-cart-meta">
+                              <a href="single-product.html"></a>
+                              <span class="mini-meta">
+                                <span class="mini-color"></span>
+                              </span>
+                            </li>
+                          <%end%>
+                          <% if current_user %>
+                            <li class="mini-footer">
+                              <%= link_to 'Voir le panier', cart_path(current_user.id),class:"view-cart"%>
+                              <a href="shop-checkout.html" class="check-out">Payer</a>
+                            </li>
+                          <%end%>
+                        </ul>
+                        <!--End mini cart-->
+                      </li>
+                    </ul>
+                    <!--End Shop meta-->
+                    <!--navigation mobi-->
+                    <button data-target=".nav-collapse" class="btn-navbar tz_icon_menu" type="button">
+                      <i class="fa fa-bars"></i>
+                    </button>
+                    <!--End navigation mobi-->
+                  </div>
+                </nav>
+              </header>
+              <%= yield %>
+              <footer class="tz-footer">
+                <!--Copy right-->
+                <div class="tz-copyright">
+                  <div class="container">
+                    <div class="footer-main">
+                      <div id="footer-left">
+                        <div class="p-footer">Copyright &copy; 2020  par la team vocal 1 de THP. All rights reserved.</div>
+                      </div>
+                      <!--Social networks-->
+                      <div  id="footer-right" >
+                        <ul class="tz-social">
+                          <li>
+                            <a class="fa fa-facebook" href="#"></a>
+                          </li>
+                          <li>
+                            <a class="fa fa-twitter" href="#"></a>
+                          </li>
+                          <li>
+                            <a class="fa fa-google-plus" href="#"></a>
+                          </li>
+                          <li>
+                            <a class="fa fa-tumblr" href="#"></a>
+                          </li>
+                          <li>
+                            <a class="fa fa-flickr" href="#"></a>
+                          </li>
+                          <li>
+                            <a class="fa fa-pinterest" href="#"></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+>>>>>>> be47195dd1223db1c4fe1cd206166ace27318b53
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <!--End copy right-->
-  </footer>
-</body>
-</html>
+          <!--End copy right-->
+        </footer>
+      </body>
+    </html>
