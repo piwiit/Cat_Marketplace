@@ -1,28 +1,140 @@
-<table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Title</th>
-      <th>Price</th>
-      <th>Description</th>
-      <th>Categorie</th>
-    </tr>
-  </thead>
-  <tbody>
-    <%@artworks.each do|artwork|%>
-      <tr>
-        <td>
-          <% if artwork.picture.attached?%>
-            <%= image_tag artwork.picture,width:"30%"%>
-          <%end%>
-        </td>
-        <td><%=artwork.title%></td>
-        <td><%=artwork.price%> €</td>
-        <td><%=artwork.description%></td>
-        <td><%=artwork.category_id%></td>
-      </tr>
-    <%end%>
-  </tbody>
-</table>
-<br>
-<%=link_to 'new artwork', new_artwork_path%>
+<!--Start shop single-->
+<section class="tz-shop-single">
+  <div class="container">
+    <!--Start Breadcrumbs-->
+    <ul class="tz-breadcrumbs">
+      <li>
+        <%=link_to "Accueil", root_path%>
+      </li>
+      <li class="current">
+        Categorie
+      </li>
+    </ul>
+    <!--End Breadcrumbs-->
+    <div class="row">
+      <div class="col-md-6 col-sm-6">
+        <!--Shop images-->
+        <div class="shop-images">
+          <div class="single-gallery">
+            <%if @artwork.picture.attached?%>
+              <%= image_tag @artwork.picture, style: "height: 100%;", alt: 'picture' %>
+            <%else%>
+              <img src="https://i.picsum.photos/id/1025/4951/3301.jpg?hmac=_aGh5AtoOChip_iaMo8ZvvytfEojcgqbCH7dzaz-H8Y" class="d-inline-block align-center" alt="">
+            <%end%>
+          </div>
+        </div>
+        <!--End shop image-->
+      </div>
+      <div class="col-md-6 col-sm-6">
+        <!--Shop content-->
+        <div class="entry-summary">
+          <h1 style="margin-top: 18px;">
+            <%= @artwork.title %>
+          </h1>
+          <p class="product-price">
+            <span class="price"><%= @artwork.price %>€</span>
+            <span class="stock">
+              <span>
+                <% if @artwork.quantity != nil && @artwork.quantity > 0 %>
+                  <%= "Promotion en cours !" %>
+                <% end %>
+              </span>
+            </span>
+          </p>
+          <div class="description">
+            <p>
+              <%= @artwork.title %></p>
+            <p>
+              Taille : 1920 x 1080</p>
+          </div>
+          <form class="tz_variations_form ">
+            <p class="form-attr"></p>
+            <br>
+            <p>
+              <%= link_to 'Ajouter au panier',join_art_carts_path(artwork_id: @artwork.id), method: 'POST',class:"single_add_to_cart_button"%>
+            </p>
+          </form>
+        </div>
+        <!--End shop content-->
+      </div>
+    </div>
+  </div>
+  <!--Shop tabs-->
+  <div class="tz-shop-tabs">
+    <div class="container">
+      <div class="tab-head">
+        <ul class="nav nav-tabs">
+          <li role="presentation" class="active">
+            <a href="#description" data-toggle="tab">Description</a>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-content">
+        <div class="tab-pane active" id="description">
+          <p><%=@artwork.description%></p>
+          <p>Mosus d'esprit de verrat de patente à gosse de mautadit de cossin de boswell de calvinouche de crime de calvince de doux Jésus de tabarnane de sainte-viarge de charogne de purée de bâtard de torrieux de cul de crucifix d'ostie de gériboire de câline de bine de calvaire de tabarnouche de cochonnerie de géritole de saintes fesses de mautadine de mangeux d'marde de bout d'viarge de câline de baptême de maudite marde de viarge de cibouleau d'astie de saint-sacrament de batèche de cimonaque.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--End tab-->
+  <!--Tabs product-->
+  <div class="container">
+    <div class="box-shadow">
+      <!--Tabs header-->
+      <div class="tz-tabs-header">
+        <h2 class="tz-tabs-title pull-left">Meilleurs Ventes</h2>
+      </div>
+      <!--End tab header-->
+      <!--Tab content-->
+      <div class="tab-content">
+        <!--Tab item-->
+        <div class="tab-pane active" id="one_read">
+          <div class="row row-item">
+            <% @artworks.each do |artwork|%>
+              <div class="col-md-3 col-sm-6">
+                <!--Start Loop-->
+                <div class="product-item">
+                  <div class="product-thubnail">
+                    <%if artwork.picture.attached?%>
+                      <%= image_tag artwork.picture, style: "height: 210px; width: 210px;", alt: 'picture' %>
+                    <%else%>
+                      <img src="https://i.picsum.photos/id/1025/4951/3301.jpg?hmac=_aGh5AtoOChip_iaMo8ZvvytfEojcgqbCH7dzaz-H8Y" style="height: 210px; width: 210px;" class="d-inline-block align-center" alt="">
+                    <%end%>
+                    <div class="product-meta">
+                      <a class="add-to-cart" href="shop-cart.html">Ajouter au panier</a>
+                      <span class="quick-view">
+                        <%= link_to 'Aperçu', artwork_path(artwork.id) %>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="product-infomation">
+                    <h4>
+                      <a><%=artwork.title%></a>
+                    </h4>
+                    <span class="product-price"><%=artwork.price%>
+                      €</span>
+                    <br>
+                  </div>
+                </div>
+                <!--End Loop-->
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--End tab item-->
+  <!--End tab content-->
+  <!--End tabs-->
+  <!--End class site-->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script type='text/javascript' src="js/off-canvas.js"></script>
+  <!--jQuery Countdow-->
+  <script src="js/jquery.plugin.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <!--End Countdow-->
+  <script src="js/owl.carousel.js"></script>
+  <script src="js/custom.js"></script>

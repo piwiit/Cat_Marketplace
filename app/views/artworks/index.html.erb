@@ -1,28 +1,186 @@
-<table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Title</th>
-      <th>Price</th>
-      <th>Description</th>
-      <th>Categorie</th>
-    </tr>
-  </thead>
-  <tbody>
-    <%@artworks.each do|artwork|%>
-      <tr>
-        <td>
-          <% if artwork.picture.attached?%>
-            <%= image_tag artwork.picture,width:"30%"%>
-          <%end%>
-        </td>
-        <td><%=artwork.title%></td>
-        <td><%=artwork.price%> €</td>
-        <td><%=artwork.description%></td>
-        <td><%=artwork.category_id%></td>
-      </tr>
-    <%end%>
-  </tbody>
-</table>
-<br>
-<%=link_to 'new artwork', new_artwork_path%>
+<!--Start shop-->
+<div class="tz-shop">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <!--Start for shop sidebar-->
+        <div class="tz-shop-sidebar">
+          <aside class="widget widget_product_categories">
+            <h3 class="widget-title">Categories</h3>
+            <ul class="product-categories">
+              <li>
+                <a href="shop.html"></a>
+              </li>
+              <li>
+                <a href="shop.html">Jeux-video</a>
+              </li>
+              <% @artworks.map{|artwork| artwork.category}.uniq.each do |category| %>
+                <li>
+                  <a href="shop.html"><%=category.name%></a>
+                </li>
+              <% end %>
+            </ul>
+          </aside>
+          <aside class="product-catlog widget">
+            <h3 class="widget-title">Filtre</h3>
+            <div class="widget_price_filter">
+              <h4 class="widget-title-children">
+                Prix
+              </h4>
+              <form>
+                <div id="slider-range"></div>
+                <div class="price_label">
+                  <button type="submit" class="button">Filtrer</button>
+                  <span class="value-price">
+                    <span class="from"></span>
+                    -
+                    <span class="to"></span>
+                  </span>
+                </div>
+              </form>
+            </div>
+            <div class="widget-size-filter">
+              <h4 class="widget-title-children">
+                Size Filter
+              </h4>
+              <ul>
+                <li>
+                  <a href="shop.html">M - 720p  <span>(24)</span></a>
+                </li>
+                <li>
+                  <a href="shop.html">L - 1080p  <span>(18)</span></a>
+                </li>
+              </ul>
+            </div>
+          </aside>
+          <aside class="widget widget_product">
+            <h3 class="widget-title">Artworks au hasard</h3>
+            <ul>
+              <% @artworks.sample(5).each do |artwork| %>
+                <li>
+                  <a href="/artworks/<%=artwork.id%>">
+                    <%if artwork.picture.attached?%>
+                      <%= image_tag artwork.picture, style: "height: 52; width: 78;", alt: 'picture' %>
+                    <%else%>
+                      <img src="https://i.picsum.photos/id/1025/4951/3301.jpg?hmac=_aGh5AtoOChip_iaMo8ZvvytfEojcgqbCH7dzaz-H8Y" class="d-inline-block align-center" alt="">
+                    <%end%>
+                    <div class="item-info">
+                      <h5><%= artwork.title %></h5>
+                      <span class="price"><%= artwork.price %> €</span>
+                    </div>
+                  </a>
+                </li>
+              <% end %>
+              <br>
+            </ul>
+          </aside>
+        </div>
+        <!--End shop sidebar-->
+      </div>
+      <div class="col-md-9">
+        <!--Start shop content-->
+        <div class="tz-shop-content">
+          <ul class="tz-breadcrumbs">
+            <li>
+              <%= link_to "Accueil", root_path%>
+            </li>
+            <li class="current">
+              Artworks
+            </li>
+          </ul>
+          <div class="shop-banner">
+            <%= image_tag "https://avassor.fr/wp-content/uploads/2018/01/header_pkmn01.png", alt: 'banner' %>
+          </div>
+          <div class="catalog-meta">
+            <div class="catalog_top">
+              <span class="style-switch">
+                <a class="nav-grid-view fa fa-th-large active"></a>
+                <a class="nav-list-view fa fa-list"></a>
+              </span>
+              <form class="shop-order">
+                <label class="form-arrow">
+                  <select class="number-item" name="number_item">
+                    <option value="12">12 items/page</option>
+                    <option value="6">6 items/page</option>
+                    <option value="3">3 items/page</option>
+                  </select>
+                </label>
+                <label class="form-arrow">
+                  <select name="orderby" class="orderby">
+                    <option value="'">Sort By: Position</option>
+                    <option value="rating">Sort by rating</option>
+                    <option value="date">Sort by newness</option>
+                  </select>
+                </label>
+              </form>
+            </div>
+          </div>
+          <div class="tz-product row grid-eff">
+            <!--Product item-->
+            <% @artworks.each do |artwork|%>
+              <div class="product-item col-md-4 col-sm-6">
+                <div class="item">
+                  <div class="product-item-inner">
+                    <div class="product-thumb">
+                      <%if artwork.picture.attached?%>
+                        <%= image_tag artwork.picture, alt: 'picture' %>
+                      <%else%>
+                        <%=image_tag "https://upload.wikimedia.org/wikipedia/commons/1/10/MaisonCarr%C3%A9e.jpeg", class: "d-inline-block align-center"%>
+                      <%end%>
+                    </div>
+                    <div class="product-info">
+                      <br>
+                      <h4><a href="shop.html"><%= artwork.title %></a></h4>
+                      <span class="p-meta">
+                        <span class="p-price"><%= artwork.price %> €</span>
+                      </span>
+                      <span class="p-color">
+                      </span>
+                      <p>
+                        <%= artwork.description %>
+                      </p>
+                      <span class="p-mask">
+                        <%= link_to 'Ajouter au panier',join_art_carts_path(artwork_id: artwork.id), method: 'POST',class:"add-to-cart"%>
+                        <span class="quick-view">
+                          <%= link_to 'Voir', artwork_path(artwork.id) %>
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+            <!--End product item-->
+          </div>
+          <nav class="pagination">
+            <ul class="pagination_list pull-right">
+              <li>
+                <a href="shop.html">1</a>
+              </li>
+              <li>
+                <span class="current">2</span>
+              </li>
+              <li>
+                <a href="shop.html">3</a>
+              </li>
+              <li>
+                <a href="shop.html">4</a>
+              </li>
+              <li>
+                <a href="shop.html">5</a>
+              </li>
+              <li>
+                <span>...</span>
+              </li>
+              <li>
+                <a href="shop.html">Next</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!--End shop content-->
+      </div>
+    </div>
+  </div>
+</div>
+<!--End Shop-->
