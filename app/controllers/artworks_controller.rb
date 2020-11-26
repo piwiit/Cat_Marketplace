@@ -1,10 +1,5 @@
 class ArtworksController < ApplicationController # verifier les REDIRECT # gerer Activerecord pour creation et update d'artwork # PRECISER les bon params, ajouter aguilleur AJAX, et les redirect du NEW et UPDATE
   def index
-<<<<<<< HEAD
-    @artworks = Artwork.all
-@categories = Category.all
-
-=======
     @categories = Category.all
     @artworks = Artwork.all.paginate(:per_page => 6, :page => params[:page])
     @custom_renderer = Class.new(WillPaginate::ActionView::LinkRenderer) do
@@ -12,7 +7,6 @@ class ArtworksController < ApplicationController # verifier les REDIRECT # gerer
         {class: ""}
       end
     end
->>>>>>> be47195dd1223db1c4fe1cd206166ace27318b53
   end
 
   def show

@@ -1,11 +1,14 @@
 class ApplicationController < ActionController::Base
+  
   # Chris: il va falloire créer un controlleur heritant du controller Devise, le brancher au partial, et 
   # incorporer l'aiguilleur. Je m'en occuperais. La bise
  include ApplicationHelper
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-
+def record_not_found
+  redirect_to root_path
+end 
   
   private
 
