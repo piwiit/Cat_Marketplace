@@ -18,7 +18,7 @@
           <aside class="widget widget_product">
             <h3 class="widget-title">Artworks au hasard</h3>
             <ul>
-              <% @artworks_all.sample(5).each do |artwork| %>
+              <% @artworks.sample(5).each do |artwork| %>
                 <li>
                   <a href="/artworks/<%=artwork.id%>">
                     <%if artwork.picture.attached?%>
