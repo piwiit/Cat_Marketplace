@@ -1283,6 +1283,7 @@ input {
 .cart-inner .mini-footer .view-cart:hover,
 .cart-inner .mini-footer .view-cart:focus {
   background: #393e46;
+  color: #ffd369;
 }
 .cart-inner .mini-footer .check-out {
   background: #393e46;
@@ -1301,6 +1302,8 @@ input {
 .cart-inner .mini-footer .check-out:hover,
 .cart-inner .mini-footer .check-out:focus {
   background: #222831;
+  color: #ffd369;
+
 }
 .tz_icon_menu {
   background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
@@ -2101,6 +2104,7 @@ input {
   .p-mask
   a:focus {
   background: #393e46;
+  color: #ffd369; 
 }
 
 .tz-product
@@ -2979,6 +2983,7 @@ input {
 .single_add_to_cart_button:hover,
 .single_add_to_cart_button:focus {
   background-color: #222831;
+  color: #FFD369;
 }
 .single_add_to_wishlist {
   background-image: url("wishlist_black.png");

@@ -67,12 +67,12 @@
                 </li>
                 <li>
                   <h3><a href="single-product.html"><%=@promotion.title%></a></h3>
-                  <span class="event-price" style="color : #ec971f"><%=@promotion.price%>€</span>
+                  <p class="tz-color" style="text-decoration: line-through"><%=@promotion.price%> €</p><span class="event-price" style="color : #ec971f"><%=@promotion.price/2%>€</span>
                 </li>
                 <li class="product-event-attr">
                   <span class="tz-color">
                     Format:
-                    <i class="">JPEG</i>
+                    <i class="">PNG</i>
                   </span>
                 </li>
                 <li class="event-footer">
@@ -140,7 +140,7 @@
         <div class="tz-shortcode-tabs">
           <!--Tabs Header-->
           <div class="tz-tabs-header">
-            <h2 class="tz-tabs-title pull-left">Populaires</h2>
+            <h2 class="tz-tabs-title pull-left">Les + populaires</h2>
           </div>
           <!--End Tabs header-->
           <!--Start Tabs content-->
@@ -220,7 +220,7 @@
           <div class="get-in-touch">
             <h3>Restons en contact</h3>
             <p>Vous voulez proposer une idée de dessin?</p>
-            <%= link_to "Contactez-moi", contact_index_path %>
+            <%= link_to "Contactez-nous", contact_index_path %>
           </div>
           <!--End Get In Touch-->
         </div>
