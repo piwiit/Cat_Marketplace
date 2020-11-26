@@ -70,10 +70,7 @@
               <%= link_to cart_path(current_user.id) do%><strong><%=find_user_cart.length%></strong>Panier : <%= find_total_price%>€<%end%>
               <!--Mini cart-->
               <%else %>
-              <li class="tz-mini-cart">
-                <%= link_to cart_path(current_user.id) do%><strong>0</strong>Panier : 0€<%end%>
                 <!--Mini cart-->
-              <%else %>
                 <li class="tz-mini-cart">
                   <a><strong>0</strong>Panier : 0€</a>
                 <%end %>
