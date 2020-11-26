@@ -8,15 +8,9 @@
           <aside class="widget widget_product_categories">
             <h3 class="widget-title">Categories</h3>
             <ul class="product-categories">
-              <li>
-                <a href="shop.html"></a>
-              </li>
-              <li>
-                <a href="shop.html">Jeux-video</a>
-              </li>
               <% @artworks.map{|artwork| artwork.category}.uniq.each do |category| %>
                 <li>
-                  <a href="shop.html"><%=category.name%></a>
+                  <%=link_to category.name, artworks_path%>
                 </li>
               <% end %>
             </ul>
