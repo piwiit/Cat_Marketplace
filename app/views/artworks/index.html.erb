@@ -8,7 +8,7 @@
           <aside class="widget widget_product_categories">
             <h3 class="widget-title">Categories</h3>
             <ul class="product-categories">
-              <% @artworks.map{|artwork| artwork.category}.uniq.each do |category| %>
+              <% @categories.each do |category| %>
                 <li>
                   <%=link_to category.name, artworks_path%>
                 </li>
@@ -148,27 +148,9 @@
           </div>
           <nav class="pagination">
             <ul class="pagination_list pull-right">
-              <li>
-                <a href="shop.html">1</a>
-              </li>
-              <li>
-                <span class="current">2</span>
-              </li>
-              <li>
-                <a href="shop.html">3</a>
-              </li>
-              <li>
-                <a href="shop.html">4</a>
-              </li>
-              <li>
-                <a href="shop.html">5</a>
-              </li>
-              <li>
-                <span>...</span>
-              </li>
-              <li>
-                <a href="shop.html">Next</a>
-              </li>
+              <%= form_tag artworks_path, :method => 'get',:id => "artworks_search", remote: true do %>
+                <div id="artworks"><%= render 'artworks' %></div>
+              <% end %>
             </ul>
           </nav>
         </div>
