@@ -8,13 +8,8 @@ require("@rails/activestorage").start()
 require("turbolinks").start()
 require("channels")
 
-console.log("Avant")
 
 require("packs/custom")
-
-
-console.log("A toi qui lit ce message : tu es une belle personne.")
-
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
