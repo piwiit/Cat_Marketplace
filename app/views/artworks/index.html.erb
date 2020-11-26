@@ -158,7 +158,7 @@
                         <%= artwork.description %>
                       </p>
                       <span class="p-mask">
-                        <a href="shop-cart.html" class="add-to-cart">Ajouter au panier</a>
+                        <%= link_to 'Ajouter au panier',join_art_carts_path(artwork_id: artwork.id), method: 'POST',class:"add-to-cart"%>
                         <span class="quick-view">
                           <%= link_to 'Voir', artwork_path(artwork.id) %>
                         </span>
