@@ -57,13 +57,7 @@
                   </tr>
                 <% end %>
                 <tr>
-                  <td class="actions" colspan="6">
-                    <a class="back-shop" href="#">
-                      <i class="fa fa-angle-left"></i>Revenir sur la boutique</a>
-                      <%= link_to cart_charges_path(params[:id]), method: 'POST', class:"update-cart" do %>
-                      <i class="fas fa-shopping-cart"></i>   Payer
-                      <%end %>
-                  </td>
+                  
                 </tr>
               </tbody>
               <!--End table body-->
@@ -90,6 +84,13 @@
                           <span class="amount"><%= '%.2f' % (@cart.total) %>
                             €</span></td>
                       </tr>
+                      <td class="actions" colspan="6">
+                    <a class="back-shop" href="#">
+                      <i class="fa fa-angle-left"></i>Revenir sur la boutique</a>
+                      <%= link_to cart_charges_path(params[:id]), method: 'POST', class:"update-cart" do %>
+                      <i class="fas fa-shopping-cart"></i>   Payer
+                      <%end %>
+                  </td>
                     </tbody>
                   </table>
                 </div>
