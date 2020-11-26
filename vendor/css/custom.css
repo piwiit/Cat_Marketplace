@@ -509,7 +509,7 @@ input {
   visibility: visible;
 }
 .header-top ul.pull-left li:first-child a {
-  padding-left: 0;
+
 }
 .header-top ul.pull-right li:last-child a {
   padding-right: 0;
@@ -600,7 +600,8 @@ input {
   padding-left: 7px;
 }
 .header-content {
-  padding: 35px 0 50px;
+  width: 100%;
+  padding: 35px 0 30px;
 }
 .header-content:after {
   clear: both;
@@ -608,8 +609,9 @@ input {
   content: "";
 }
 .tz-logo {
-  padding: 0;
-  margin: 0;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
 }
 .tz-search {
   position: relative;
