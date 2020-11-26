@@ -17,7 +17,7 @@
             <div class="container">
               <!--Start header content-->
               <div class="header-content">
-                <h3 class="tz-logo pull-left"><a href="index.html"><%= image_tag "logo.png" %></a></h3>
+                <h3 class="tz-logo pull-left"><%= link_to root_path do %><%= image_tag "logo.png"%><%end%></h3>
                 <div class="tz-search pull-right">
                   <!--Start form search-->
                   <form>
@@ -65,11 +65,12 @@
             <% else %>
               <%=render 'registrations/loginmodal' %>
             <% end %>
-            <% if current_user %>
-              <li class="tz-mini-cart">
-                <%= link_to cart_path(current_user.id) do%><strong><%=find_user_cart.length%></strong>Panier : <%= find_total_price%>€<%end%>
-                <!--Mini cart-->
+            <% if current_user && current_user.carts.exists? %>
+            <li class="tz-mini-cart">
+              <%= link_to cart_path(current_user.id) do%><strong><%=find_user_cart.length%></strong>Panier : <%= find_total_price%>€<%end%>
+              <!--Mini cart-->
               <%else %>
+                <!--Mini cart-->
                 <li class="tz-mini-cart">
                   <a><strong>0</strong>Panier : 0€</a>
                 <%end %>
