@@ -57,12 +57,7 @@
                   </tr>
                 <% end %>
                 <tr>
-                  <td class="actions" colspan="6">
-                    <a class="back-shop" href="#">
-                      <i class="fa fa-angle-left"></i>Revenir sur la boutique</a>
-                    <button class="update-cart" type="submit">
-                      <i class="fas fa-shopping-cart"></i>Actualiser panier</button>
-                  </td>
+                  
                 </tr>
               </tbody>
               <!--End table body-->
@@ -82,43 +77,21 @@
                 <div class="cart_totals_inner">
                   <table>
                     <tbody>
-                      <tr class="cart-subtotal">
-                        <th>Sous-total</th>
-                        <td>
-                          <span class="amount"><%= '%.2f' % (@cart.total) %>
-                            €</span></td>
-                      </tr>
-                      <tr class="shipping">
-                        <th>Livraison</th>
-                        <td>
-                          <form class="shop-shipping-calculator" method="post">
-                            <p class="form-r">
-                              <input type="checkbox" name="rate" value="1"/>
-                              <span>
-                                Normal : 24h
-                                <span class="price">€ 00.00</span></span>
-                            </p>
-                            <p class="form-r">
-                              <input type="checkbox" name="international" value="1"/>
-                              <span>
-                                Express : 2H
-                                <span class="price">
-                                  € 5.00
-                                </span>
-                              </span>
-                            </p>
-                          </form>
-                        </td>
-                      </tr>
+                    
                       <tr class="order-total">
                         <th>Prix total</th>
                         <td>
                           <span class="amount"><%= '%.2f' % (@cart.total) %>
                             €</span></td>
                       </tr>
-                      <tr class="order-total">
-                        <%= button_to "Procéder au paiement", cart_charges_path(params[:id]), method: 'POST'%>
-                      </tr>
+                      <td class="actions" colspan="6">
+                      <%= link_to artworks_path, class: "back-shop" do %>
+                      <i class="fa fa-angle-left"></i>Revenir sur la boutique
+                      <%end%>
+                      <%= link_to cart_charges_path(params[:id]), method: 'POST', class:"update-cart" do %>
+                      <i class="fas fa-shopping-cart"></i>   Payer
+                      <%end %>
+                  </td>
                     </tbody>
                   </table>
                 </div>

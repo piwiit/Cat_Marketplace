@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
-  # Flo : Le controlleur n'a pas ecnore été testé, en attente des views.
 
   def index
     @users = User.all
@@ -20,7 +19,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(firstname: params[:firstname], lastname: params[:lastname], age: params[:age], encrypted_password: params[:encrypted_password], password_confirmation: params[:password_confirmation])
     if @user.save
-      log_in(@user) # La méthode est dans le users_helper.rb
+      log_in(@user)
       flash[:notice_good] = "Connexion réussi"
       redirect_to root_path
     else
