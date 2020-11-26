@@ -3,6 +3,7 @@ class JoinArtCartsController < ApplicationController
   before_action :set_cart
   def index
     @join_art_carts = JoinArtCart.all
+    @cart_price = Cart.all
   end
 
   def show

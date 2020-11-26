@@ -5,4 +5,6 @@ class Cart < ApplicationRecord
 
   has_many :artworks, through: :join_art_carts
 
+
+
 end
