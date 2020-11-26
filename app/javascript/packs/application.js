@@ -7,21 +7,57 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 
-require("js/bootstrap.min")
-require("js/custom")
-require("js/html5shiv.min")
-require("js/jquery-ui")
-require("js/jquery.countdown.min")
-require("js/jquery.min")
-require("js/jquery.parallax-1.1.3")
-require("js/jquery.plugin.min")
-require("js/off-canvas")
-require("js/respond.min")
-require("js/custom-rs")
-require("js/jquery.themepunch.revolution.min")
-require("js/jquery.themepunch.tools.min")
 
 
+//B 
+require("packs/custom-rs")
+//M
+require("packs/bootstrap.min")
+
+//K
+require("packs/jquery.themepunch.revolution.min")
+
+//G
+require("packs/jquery.parallax-1.1.3")
+
+//F
+require("packs/jquery.min")
+
+//E
+require("packs/jquery.countdown.min")
+
+//D
+require("packs/jquery-ui")
+
+//C
+require("packs/html5shiv.min")
+
+//H
+require("packs/jquery.plugin.min")
+
+//I
+require("packs/off-canvas")
+
+//J
+require("packs/respond.min")
+
+
+//A
+require("packs/custom")
+
+
+
+
+
+
+
+
+
+
+
+
+//L
+require("packs/jquery.themepunch.tools.min")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

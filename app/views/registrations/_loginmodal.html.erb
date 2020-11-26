@@ -2,7 +2,6 @@
               <li class="tz-header-login">
                 <a href="/users/sign_in">S'inscrire/Se Connecter</a>
                 <div class="tz-login-form">
-                  <form>
                    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                   <p class="form-content">
                   <%= f.label :email %>
@@ -15,14 +14,12 @@
                 </p>
                 
             <p class="form-footer">
-            <a href="/users/password/new" style="margin-right: 10px;">Mot de passe perdu?</a>
-             <%= f.submit "Se connecter", class: "pull-right button_class" %>
-            </p>
+            <%= link_to "Mot de passe oublié ?", new_user_password_path %>
+             <%= f.submit "Se connecter", class: "pull-right button_class" %></p>
             <% end %>
             <p class="form-text">
-                       <%= link_to "Créer un compte? Cliquez ici", new_registration_path(resource_name) %>
+                       <%= link_to "Créer un compte? Cliquez ici", new_user_session_path(resource_name), remote: true%>
                     </p>
-                  </form>
                   
                 </div>
               </li>

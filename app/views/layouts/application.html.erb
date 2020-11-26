@@ -79,9 +79,9 @@
             <!--End Main menu-->
             <!--Shop meta-->
             <% if current_user %>
-          <%=render 'layouts/islogin'%>
+          <%=render 'registrations/islogin'%>
             <% else %>
-          <%=render 'layouts/loginmodal'%>
+          <%=render 'registrations/loginmodal' %>
             <% end %>
             <li class="tz-mini-cart">
               <a href="/users/:user_id/carts/:id"><strong>2</strong>Panier : 199€</a>
