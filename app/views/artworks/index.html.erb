@@ -11,32 +11,14 @@
               <li>
                 <a href="shop.html"></a>
               </li>
-              <li class="cat-parent">
-                <a href="shop.html">Animes</a>
-                <ul class="children">
-                  <li>
-                    <a href="shop.html">categorie 1 <span>(3)</span></a>
-                  </li>
-                  <li>
-                    <a href="shop.html">categorie 2 <span></span></a>
-                  </li>
-                  <li>
-                    <a href="shop.html">categorie 3<span>(3)</span></a>
-                  </li>
-                  <li>
-                    <a href="shop.html">categorie 4<span>(3)</span></a>
-                  </li>
-                  <li>
-                    <a href="shop.html">categorie 5 <span></span></a>
-                  </li>
-                </ul>
-              </li>
               <li>
                 <a href="shop.html">Jeux-video</a>
               </li>
-              <li>
-                <a href="shop.html">Abstract</a>
-              </li>
+              <% @artworks.map{|artwork| artwork.category}.uniq.each do |category| %>
+                <li>
+                  <a href="shop.html"><%=category.name%></a>
+                </li>
+              <% end %>
             </ul>
           </aside>
           <aside class="product-catlog widget">

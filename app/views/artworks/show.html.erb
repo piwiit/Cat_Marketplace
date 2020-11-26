@@ -31,21 +31,12 @@
           <h1 style="margin-top: 18px;">
             <%= @artwork.title %>
           </h1>
-          <span class="p-vote">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-half-o"></i>
-          </span>
           <p class="product-price">
             <span class="price"><%= @artwork.price %>€</span>
             <span class="stock">
               <span>
                 <% if @artwork.quantity != nil && @artwork.quantity > 0 %>
-                  <%= "En stock" %>
-                <% else %>
-                  <%= "Rupture de stock" %>
+                  <%= "Promotion en cours !" %>
                 <% end %>
               </span>
             </span>
@@ -58,6 +49,7 @@
           </div>
           <form class="tz_variations_form ">
             <p class="form-attr"></p>
+            <br>
             <p>
               <button type="submit" class="single_add_to_cart_button">Ajouter au panier</button>
             </p>
@@ -75,27 +67,12 @@
           <li role="presentation" class="active">
             <a href="#description" data-toggle="tab">Description</a>
           </li>
-          <li role="presentation">
-            <a href="#information" data-toggle="tab">Information</a>
-          </li>
         </ul>
       </div>
       <div class="tab-content">
         <div class="tab-pane active" id="description">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu,
-            suscipit id nulla. Donec a neque libero. Pellentesque aliquet, sem eget laoreet ultrices, ipsum metus feugiat sem, quis fermentum turpis eros eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus eget sagittis vulputate,
-            sapien libero hendrerit est, sed commodo augue nisi non neque.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, lorem et placerat vestibulum, metus nisi posuere nisl, in accumsan elit odio quis mi. Cras neque metus, consequat et blandit et, luctus a nunc. Etiam gravida vehicula tellus, in
-            imperdiet ligula euismod eget. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam erat mi, rutrum at sollicitudin rhoncus, ultricies posuere erat. Duis convallis, arcu nec aliquam consequat, purus felis
-            vehicula felis, a dapibus enim lorem nec augue.</p>
-        </div>
-        <div class="tab-pane" id="information">
-          <p>
-            Cras neque metus, consequat et blandit et, luctus a nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper.
-            Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla. Donec a neque libero. Pellentesque aliquet, sem eget laoreet ultrices, ipsum metus feugiat sem, quis fermentum turpis eros eget velit. Donec ac tempus ante. Fusce ultricies massa
-            massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non neque.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, lorem et placerat vestibulum, metus nisi posuere nisl, in accumsan elit odio quis mi. Etiam gravida vehicula tellus, in imperdiet ligula euismod eget. Pellentesque habitant morbi
-            tristique senectus et netus et malesuada fames ac turpis egestas. Nam erat mi, rutrum at sollicitudin rhoncus, ultricies posuere erat. Duis convallis, arcu nec aliquam consequat, purus felis vehicula felis, a dapibus enim lorem nec augue.</p>
+          <p><%=@artwork.description%></p>
+          <p>Mosus d'esprit de verrat de patente à gosse de mautadit de cossin de boswell de calvinouche de crime de calvince de doux Jésus de tabarnane de sainte-viarge de charogne de purée de bâtard de torrieux de cul de crucifix d'ostie de gériboire de câline de bine de calvaire de tabarnouche de cochonnerie de géritole de saintes fesses de mautadine de mangeux d'marde de bout d'viarge de câline de baptême de maudite marde de viarge de cibouleau d'astie de saint-sacrament de batèche de cimonaque.</p>
         </div>
       </div>
     </div>
