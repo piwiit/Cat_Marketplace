@@ -24,11 +24,12 @@
                     <%if artwork.picture.attached?%>
                       <%= image_tag artwork.picture, style: "height: 52; width: 78;", alt: 'picture' %>
                     <%else%>
-                      <img src="https://i.picsum.photos/id/1025/4951/3301.jpg?hmac=_aGh5AtoOChip_iaMo8ZvvytfEojcgqbCH7dzaz-H8Y" class="d-inline-block align-center" alt="">
+                      <img src="https://cdn.discordapp.com/attachments/779320171399217172/781614747384676432/dd3jtpp-f81497e3-85af-4748-a2fd-240be498dabc.jpg" class="d-inline-block align-center" alt="">
                     <%end%>
                     <div class="item-info">
                       <h5><%= artwork.title %></h5>
-                      <span class="price"><%= artwork.price %> €</span>
+                      <span class="price"><%= artwork.price %>
+                        €</span>
                     </div>
                   </a>
                 </li>
@@ -54,9 +55,10 @@
             </li>
           </ul>
           <div class="shop-banner">
-            <%= image_tag "https://avassor.fr/wp-content/uploads/2018/01/header_pkmn01.png", alt: 'banner' %>
+            <%= image_tag "https://cdn.discordapp.com/attachments/779320171399217172/781616503152836659/banner-sm.png", alt: 'banner' %>
           </div>
-          <h1 class="text-center mt-5-title"> <%= @category.name%></h1>
+          <h1 class="text-center mt-5-title">
+            <%= @category.name%></h1>
           <div class="tz-product row grid-eff">
             <!--Product item-->
             <% @artworks.each do |artwork|%>
@@ -72,12 +74,14 @@
                     </div>
                     <div class="product-info">
                       <br>
-                      <h4><a href="shop.html"><%= artwork.title %></a></h4>
+                      <h4>
+                        <a href="shop.html"><%= artwork.title %></a>
+                      </h4>
                       <span class="p-meta">
-                        <span class="p-price"><%= artwork.price %> €</span>
+                        <span class="p-price"><%= artwork.price %>
+                          €</span>
                       </span>
-                      <span class="p-color">
-                      </span>
+                      <span class="p-color"></span>
                       <p>
                         <%= artwork.description %>
                       </p>

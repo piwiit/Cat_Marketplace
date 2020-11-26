@@ -14,24 +14,14 @@ Category.destroy_all
 JoinArtCart.destroy_all
 
 
-categories_names = [
-  'Classic',
-  'Epic',
-  'Fairy tale',
-  'Fantasy',
-  'Horror',
-  'Humor',
-  'Legend',
-  'Mystery',
-  'Mythology',
-  'Romance',
-  'Travel',
-  'Superhero'
-]
+categories_names = ['Manga', 'Comics', 'Fantasy', 'S.F', 'Horreur', 'Fan Art', 'Video-Game', '3D']
 
+categories_names.each do |category|
+Category.create(name: category)
+end
 
-10.times do
-  
+5.times do
+
     User.create(
       firstname: Faker::Name.first_name,
       lastname: Faker::Name.last_name,
@@ -43,11 +33,11 @@ categories_names = [
     )
 end
 
-10.times do 
-  Cart.create(user_id: User.ids.sample) 
+5.times do
+  Cart.create(user_id: User.ids.sample)
 end
 
-10.times do
+5.times do
     Order.create(
       reception_email: Faker::Internet.email(domain: 'yopmail'),
       total_price: rand(5..1000),
@@ -56,12 +46,7 @@ end
 end
 
 
-
-10.times do
-  Category.create(name: categories_names.sample) 
-end
-
-10.times do
+5.times do
     Artwork.create(
       title: Faker::Book.title,
       price: Faker::Number.decimal(l_digits: 3, r_digits: 2),
@@ -74,6 +59,6 @@ end
     )
 end
 
-10.times do
+5.times do
    JoinArtCart.create(cart_id: Cart.ids.sample, artwork_id: Artwork.ids.sample)
 end

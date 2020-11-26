@@ -28,7 +28,8 @@
                     <%end%>
                     <div class="item-info">
                       <h5><%= artwork.title %></h5>
-                      <span class="price"><%= artwork.price %> €</span>
+                      <span class="price"><%= artwork.price %>
+                        €</span>
                     </div>
                   </a>
                 </li>
@@ -68,12 +69,14 @@
                     </div>
                     <div class="product-info">
                       <br>
-                      <h4><a href="shop.html"><%= artwork.title %></a></h4>
+                      <h4>
+                        <a href="shop.html"><%= artwork.title %></a>
+                      </h4>
                       <span class="p-meta">
-                        <span class="p-price"><%= artwork.price %> €</span>
+                        <span class="p-price"><%= artwork.price %>
+                          €</span>
                       </span>
-                      <span class="p-color">
-                      </span>
+                      <span class="p-color"></span>
                       <p>
                         <%= artwork.description %>
                       </p>
@@ -93,14 +96,14 @@
           <nav class="pagination">
             <ul class="pagination_list pull-right">
               <%= form_tag artworks_path, :method => 'get',:id => "artworks_search", remote: true do %>
-                <div id="artworks"><%= render 'artworks' %></div>
-              <% end %>
-            </ul>
-          </nav>
-        </div>
-        <!--End shop content-->
+              <div id="artworks"><%= render 'artworks' %></div>
+            <% end %>
+          </ul>
+        </nav>
       </div>
+      <!--End shop content-->
     </div>
   </div>
+</div>
 </div>
 <!--End Shop-->

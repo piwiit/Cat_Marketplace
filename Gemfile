@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails', groups: [:development, :test, :production]
 
 ruby '2.7.1'
 
@@ -37,7 +37,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
 gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 gem  'table_print'
- gem 'faker', :git => 'https://github.com/faker-ruby/faker.git'
  gem "letter_opener"
  gem 'pry'
 end
@@ -65,3 +64,4 @@ end
 gem 'better_errors'
 gem 'binding_of_caller'
 gem 'will_paginate', '~> 3.1.0'
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git'
