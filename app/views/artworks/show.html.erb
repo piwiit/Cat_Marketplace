@@ -51,7 +51,7 @@
             <p class="form-attr"></p>
             <br>
             <p>
-              <button type="submit" class="single_add_to_cart_button">Ajouter au panier</button>
+              <%= link_to 'Ajouter au panier',join_art_carts_path(artwork_id: @artwork.id), method: 'POST',class:"single_add_to_cart_button"%>
             </p>
           </form>
         </div>
