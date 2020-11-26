@@ -65,17 +65,13 @@
             <% else %>
               <%=render 'registrations/loginmodal' %>
             <% end %>
-<<<<<<< HEAD
             <% if current_user && current_user.carts.exists? %>
             <li class="tz-mini-cart">
               <%= link_to cart_path(current_user.id) do%><strong><%=find_user_cart.length%></strong>Panier : <%= find_total_price%>€<%end%>
               <!--Mini cart-->
               <%else %>
-=======
-            <% if current_user %>
->>>>>>> be47195dd1223db1c4fe1cd206166ace27318b53
               <li class="tz-mini-cart">
-                <%= link_to cart_path(current_user.id) do%><strong><%=find_user_cart.length%></strong>Panier : <%= find_total_price%>€<%end%>
+                <%= link_to cart_path(current_user.id) do%><strong>0</strong>Panier : 0€<%end%>
                 <!--Mini cart-->
               <%else %>
                 <li class="tz-mini-cart">
