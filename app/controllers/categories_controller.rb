@@ -40,6 +40,6 @@ end
 
 # chris : lorsqu'on detruit une categorie, comment reagissent les artworks ?
   def destroy
-@
+
   end
 end

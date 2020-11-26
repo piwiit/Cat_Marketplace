@@ -17,80 +17,69 @@
             <div class="container">
               <!--Start header content-->
               <div class="header-content">
-                <h3 class="tz-logo"><%= link_to root_path do %><%= image_tag "logo.png"%>
-                <%end%>
-              </h3>
+                <h3 class="tz-logo"><%= link_to root_path do %><%= image_tag "logo.png"%><%end%></h3>
 
+              </div>
+              <!--End class header content-->
             </div>
-            <!--End class header content-->
-          </div>
-          <!--Start main menu -->
-          <nav class="tz-menu-primary">
-            <div class="container">
-              <!--Main Menu-->
-              <ul class="tz-main-menu pull-left nav-collapse">
-                <li>
-                  <%= link_to "Accueil", root_path %>
-                </li>
-                <li>
-                  <%= link_to "Artworks", artworks_path %>
-                </li>
-                <li>
-                  <%= link_to "Contact", contact_index_path %>
-                </li>
-                <li></li>
-              </ul>
-              <!--End Main menu-->
-              <!--Shop meta-->
-              <% if current_user %>
-                <%=render 'registrations/islogin'%>
-              <% else %>
-                <%=render 'registrations/loginmodal' %>
-              <% end %>
-              <% if current_user && current_user.carts.exists? %>
-                <li class="tz-mini-cart">
-                  <%= link_to cart_path(current_user.id) do%>
-                  <strong><%=find_user_cart.length%></strong>Panier :
-                  <%='%.2f' % (find_total_price)%>€<%end%>
-                <!--Mini cart-->
+            <!--Start main menu -->
+            <nav class="tz-menu-primary">
+              <div class="container">
+                <!--Main Menu-->
+                <ul class="tz-main-menu pull-left nav-collapse">
+                  <li>
+                    <%= link_to "Accueil", root_path %>
+                  </li>
+                  <li>
+                    <%= link_to "Artworks", artworks_path %>
+                  </li>
+                  <li>
+                    <%= link_to "Contact", contact_index_path %>
+                  </li>
+                  <li>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <!--End Main menu-->
+            <!--Shop meta-->
+            <% if current_user %>
+              <%=render 'registrations/islogin'%>
+            <% else %>
+              <%=render 'registrations/loginmodal' %>
+            <% end %>
+            <% if current_user && current_user.carts.exists? %>
+            <li class="tz-mini-cart">
+              <%= link_to cart_path(current_user.id) do%><strong><%=find_user_cart.length%></strong>Panier : <%= find_total_price%>€<%end%>
+              <!--Mini cart-->
               <%else %>
                 <!--Mini cart-->
                 <li class="tz-mini-cart">
-                  <a>
-                    <strong>0</strong>Panier : 0€</a>
+                  <a><strong>0</strong>Panier : 0€</a>
                 <%end %>
                 <ul class="cart-inner">
                   <%if current_user%>
                     <% find_user_cart.each do |item|%>
                       <li class="mini-cart-content">
-                        <div class="mini-cart-img">
-                          <%image_tag "product/product-cart1.png"%>
-                          </div>
-                          <div class="mini-cart-ds">
-                            <%= link_to artwork_path(item.id) do %>
+                        <div class="mini-cart-img"><%image_tag "product/product-cart1.png"%></div>
+                        <div class="mini-cart-ds">
+                          <%= link_to artwork_path(item.id) do %>
                             <%=item.title%>
                           <%end %>
                           <span class="mini-cart-meta">
                             <%= link_to artwork_path(item.id) do %>
-                            <%=item.price%>
-                            €
-                          <%end %>
-                          <span class="mini-meta">
-                            <span class="mini-color">Disponible
-                              <i class="far fa-clock"></i>
+                              <%=item.price%> €
+                            <%end %>
+                            <span class="mini-meta">
+                              <span class="mini-color">Disponible <i class="far fa-clock"></i></span>
                             </span>
-                          </span>
-                        </li>
-                      <%end%>
-                    <% else %>
-                      <li class="mini-cart-content">
-                        <div class="mini-cart-img">
-                          <%image_tag "product/product-cart1.png"%>
-                          </div>
+                          </li>
+                        <%end%>
+                      <% else %>
+                        <li class="mini-cart-content">
+                          <div class="mini-cart-img"><%image_tag "product/product-cart1.png"%></div>
                           <div class="mini-cart-ds">
-                            <h6>
-                              <a href="single-product.html">Panier vide</a>
-                            </h6>
+                            <h6><a>Panier vide</a></h6>
                             <span class="mini-cart-meta">
                               <a href="single-product.html"></a>
                               <span class="mini-meta">
@@ -107,81 +96,55 @@
                         </ul>
                         <!--End mini cart-->
                       </li>
-                      <!--End Shop meta-->
-                      <!--navigation mobi-->
-                      <button data-target=".nav-collapse" class="btn-navbar tz_icon_menu" type="button">
-                        <i class="fa fa-bars"></i>
-                      </button>
-                      <!--End navigation mobi-->
-                      =======
-                      <div class="mini-cart-img">
-                        <%image_tag "product/product-cart1.png"%>
-                        </div>
-                        <div class="mini-cart-ds">
-                          <h6>
-                            <a>Panier vide</a>
-                          </h6>
-                          <span class="mini-cart-meta">
-                            <a href="single-product.html"></a>
-                            <span class="mini-meta">
-                              <span class="mini-color"></span>
-                            </span>
-                          <%end%>
-                          <% if current_user %>
-                            <li class="mini-footer">
-                              <%= link_to 'Voir le panier', cart_path(current_user.id),class:"view-cart"%>
-                              <a href="shop-checkout.html" class="check-out">Payer</a>
-                            </li>
-                          <%end%>
-                          <!--End mini cart-->
-                          <!--End Shop meta-->
-                          <!--navigation mobi-->
-                          <button data-target=".nav-collapse" class="btn-navbar tz_icon_menu" type="button">
-                            <i class="fa fa-bars"></i>
-                          </button>
-                          <!--End navigation mobi-->
-                        </div>
-                      </nav>
-                    </header>
-                    <%= yield %>
-                    <footer class="tz-footer">
-                      <!--Copy right-->
-                      <div class="tz-copyright">
-                        <div class="container">
-                          <div class="footer-main">
-                            <div id="footer-left">
-                              <div class="p-footer">Copyright &copy; 2020 par la team vocal 1 de THP. All rights reserved.</div>
-                            </div>
-                            <!--Social networks-->
-                            <div id="footer-right">
-                              <ul class="tz-social">
-                                <li>
-                                  <a class="fa fa-facebook" href="#"></a>
-                                </li>
-                                <li>
-                                  <a class="fa fa-twitter" href="#"></a>
-                                </li>
-                                <li>
-                                  <a class="fa fa-google-plus" href="#"></a>
-                                </li>
-                                <li>
-                                  <a class="fa fa-tumblr" href="#"></a>
-                                </li>
-                                <li>
-                                  <a class="fa fa-flickr" href="#"></a>
-                                </li>
-                                <li>
-                                  <a class="fa fa-pinterest" href="#"></a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
+                    </ul>
+                    <!--End Shop meta-->
+                    <!--navigation mobi-->
+                    <button data-target=".nav-collapse" class="btn-navbar tz_icon_menu" type="button">
+                      <i class="fa fa-bars"></i>
+                    </button>
+                    <!--End navigation mobi-->
+                  </div>
+                </nav>
+              </header>
+              <%= yield %>
+              <footer class="tz-footer">
+                <!--Copy right-->
+                <div class="tz-copyright">
+                  <div class="container">
+                    <div class="footer-main">
+                      <div id="footer-left">
+                        <div class="p-footer">Copyright &copy; 2020  par la team vocal 1 de THP. All rights reserved.</div>
                       </div>
-                    </footer>
+                      <!--Social networks-->
+                      <div  id="footer-right" >
+                        <ul class="tz-social">
+                          <li>
+                            <a class="fa fa-facebook" href="#"></a>
+                          </li>
+                          <li>
+                            <a class="fa fa-twitter" href="#"></a>
+                          </li>
+                          <li>
+                            <a class="fa fa-google-plus" href="#"></a>
+                          </li>
+                          <li>
+                            <a class="fa fa-tumblr" href="#"></a>
+                          </li>
+                          <li>
+                            <a class="fa fa-flickr" href="#"></a>
+                          </li>
+                          <li>
+                            <a class="fa fa-pinterest" href="#"></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <!--End copy right-->
-            </body>
-          </html>
+            </div>
+          </div>
+          <!--End copy right-->
+        </footer>
+      </body>
+    </html>
