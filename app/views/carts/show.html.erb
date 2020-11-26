@@ -85,8 +85,9 @@
                             €</span></td>
                       </tr>
                       <td class="actions" colspan="6">
-                    <a class="back-shop" href="#">
-                      <i class="fa fa-angle-left"></i>Revenir sur la boutique</a>
+                      <%= link_to artworks_path, class: "back-shop" do %>
+                      <i class="fa fa-angle-left"></i>Revenir sur la boutique
+                      <%end%>
                       <%= link_to cart_charges_path(params[:id]), method: 'POST', class:"update-cart" do %>
                       <i class="fas fa-shopping-cart"></i>   Payer
                       <%end %>
