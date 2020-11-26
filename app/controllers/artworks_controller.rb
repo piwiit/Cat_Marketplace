@@ -1,11 +1,14 @@
 class ArtworksController < ApplicationController # verifier les REDIRECT # gerer Activerecord pour creation et update d'artwork # PRECISER les bon params, ajouter aguilleur AJAX, et les redirect du NEW et UPDATE
   def index
     @artworks = Artwork.all
+@categories = Category.all
+
   end
 
   def show
     @artworks = Artwork.all
     @artwork = Artwork.find(params[:id])
+
   end
 
   def new

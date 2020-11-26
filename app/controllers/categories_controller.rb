@@ -35,13 +35,7 @@ flash[:notice_good] = "Category Crée"
 category_params = params.require(:category).permit(:name)
 @category.update
 
-if @category.update(post_params)
-redirect_to root_path
-flash[:notice_good] = "Edition reussis !"
-else 
-  redirect_to gossip_path(id)
-flash[:notice_bad] = "Probleme rencontré"
-  end
+
 end
 
 

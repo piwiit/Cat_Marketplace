@@ -14,11 +14,11 @@
               <li>
                 <a href="shop.html">Jeux-video</a>
               </li>
-              <% @artworks.map{|artwork| artwork.category}.uniq.each do |category| %>
-                <li>
-                  <a href="shop.html"><%=category.name%></a>
-                </li>
-              <% end %>
+ <% @categories.each do |category| %>
+      <li>
+       <%=link_to category.name, artworks_path%>
+      </li>
+<% end %> 
             </ul>
           </aside>
           <aside class="product-catlog widget">
