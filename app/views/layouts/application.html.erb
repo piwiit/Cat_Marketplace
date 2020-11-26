@@ -75,7 +75,7 @@
                 </ul>
               </li>
               <li>
-                <a href="/">Contact</a>
+                <%= link_to "Contact", contact_index_path %>
               </li>
               <li>
               </li>
@@ -85,7 +85,7 @@
             <% if current_user %>
           <%=render 'layouts/islogin'%>
             <% else %>
-          <%=render 'layouts/loginmodal'%>
+          <%=render 'users/sessions/new'%>
             <% end %>
             <li class="tz-mini-cart">
               <a href="/users/:user_id/carts/:id"><strong>2</strong>Panier : 199€</a>
