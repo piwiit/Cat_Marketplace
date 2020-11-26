@@ -59,7 +59,7 @@
           <form class="tz_variations_form ">
             <p class="form-attr"></p>
             <p>
-              <button type="submit" class="single_add_to_cart_button">Add to cart</button>
+              <%= link_to 'Ajouter au panier',join_art_carts_path(artwork_id: @artwork.id), method: 'POST',class:"single_add_to_cart_button"%>
             </p>
           </form>
         </div>
