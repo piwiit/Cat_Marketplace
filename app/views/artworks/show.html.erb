@@ -98,7 +98,7 @@
                       <img src="https://i.picsum.photos/id/1025/4951/3301.jpg?hmac=_aGh5AtoOChip_iaMo8ZvvytfEojcgqbCH7dzaz-H8Y" style="height: 210px; width: 210px;" class="d-inline-block align-center" alt="">
                     <%end%>
                     <div class="product-meta">
-                      <a class="add-to-cart" href="shop-cart.html">Ajouter au panier</a>
+                      <%= link_to 'Ajouter au panier',join_art_carts_path(artwork_id: artwork.id), method: 'POST',class:"add-to-cart"%>
                       <span class="quick-view">
                         <%= link_to 'Aperçu', artwork_path(artwork.id) %>
                       </span>
