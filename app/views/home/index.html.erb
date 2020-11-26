@@ -76,7 +76,7 @@
                   </span>
                 </li>
                 <li class="event-footer">
-                <%= link_to "Ajouter au panier", root_path, class: "add-to-cart"%>
+                <%= link_to 'Ajouter au panier',join_art_carts_path(artwork_id: @promotion.id), method: 'POST',class:"add-to-cart"%>
                 </li>
               </ul>
               <!--End Product content-->
@@ -109,10 +109,13 @@
                     <div class="product-thubnail">
                       <img src="https://images.pexels.com/photos/1134166/pexels-photo-1134166.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="product 1" />
                       <div class="product-meta">
-                        <a class="add-to-cart" href="shop-cart.html">Ajouter au panier</a>
+                        
+                        <span class="p-mask">
+                        <%= link_to 'Ajouter au panier',join_art_carts_path(artwork_id: artwork.id), method: 'POST',class:"add-to-cart"%>
                         <span class="quick-view">
-                          <%= link_to "Voir le produit", artwork_path(artwork.id), class: "add-to-cart"%>
+                          <%= link_to 'Voir', artwork_path(artwork.id) %>
                         </span>
+                      </span>
                       </div>
                     </div>
                     <div class="product-infomation">
@@ -157,10 +160,13 @@
                     <div class="product-thubnail">
                       <img src="https://images.pexels.com/photos/1134166/pexels-photo-1134166.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="product 4" />
                       <div class="product-meta">
-                        <a class="add-to-cart" href="shop-cart.html">Ajouter au panier</a>
+                        
+                       <span class="p-mask">
+                        <%= link_to 'Ajouter au panier',join_art_carts_path(artwork_id: artwork.id), method: 'POST',class:"add-to-cart"%>
                         <span class="quick-view">
-                         <%= link_to "Voir le produit", artwork_path(artwork.id), class: "add-to-cart"%>
+                          <%= link_to 'Voir', artwork_path(artwork.id) %>
                         </span>
+                      </span>
                       </div>
                     </div>
                     <div class="product-infomation">
@@ -183,10 +189,13 @@
                     <div class="product-thubnail">
                       <img src="https://images.pexels.com/photos/1134166/pexels-photo-1134166.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="product 4" />
                       <div class="product-meta">
-                        <a class="add-to-cart" href="shop-cart.html">Ajouter au panier</a>
+                        
+                        <span class="p-mask">
+                        <%= link_to 'Ajouter au panier',join_art_carts_path(artwork_id: artwork.id), method: 'POST',class:"add-to-cart"%>
                         <span class="quick-view">
-                          <%= link_to "Voir le produit", artwork_path(artwork.id), class: "add-to-cart"%>
+                          <%= link_to 'Voir', artwork_path(artwork.id) %>
                         </span>
+                      </span>
                       </div>
                     </div>
                     <div class="product-infomation">

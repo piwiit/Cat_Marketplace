@@ -89,7 +89,8 @@
           <%=render 'registrations/loginmodal' %>
             <% end %>
             <li class="tz-mini-cart">
-              <a href="/users/:user_id/carts/:id"><strong>2</strong>Panier : 199€</a>
+            
+              <a><strong>2</strong>Panier : 199€</a>
               <!--Mini cart-->
               <ul class="cart-inner">
                 <li class="mini-cart-content">
@@ -103,7 +104,7 @@
                       </span>
                     </li>
                     <li class="mini-footer">
-                      <a href="/users/:current_user.id/carts/:id" class="view-cart">Voir le panier</a>
+                      <%= link_to "Voir le panier", cart_path(current_user.id), class:"view-cart" %>
                       <a href="shop-checkout.html" class="check-out">Payer</a>
                     </li>
                   </ul>

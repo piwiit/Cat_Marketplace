@@ -4,7 +4,10 @@ class CartsController < ApplicationController
     @carts = Cart.all
   end
 
-  def show; end
+  def show
+
+
+   end
 
   def new
     @cart = Cart.new
@@ -21,9 +24,11 @@ class CartsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+   end
 
-  def update; end
+  def update
+   end
 
   def destroy
     @cart_to_delete = Cart.find(params[:id])
@@ -40,10 +45,5 @@ class CartsController < ApplicationController
   end
 
   def total
-    total = 0
-    self.line_items.each do |line_item|
-        total += line_item.product.price
-    end
-    return total
-end
+  end
 end
