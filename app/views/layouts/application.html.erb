@@ -88,9 +88,11 @@
             <% else %>
           <%=render 'registrations/loginmodal' %>
             <% end %>
+            <% if current_user %>
             <li class="tz-mini-cart">
               <a href="/users/:user_id/carts/:id"><strong><%=find_user_cart.length%></strong>Panier : <%= find_total_price%>€</a>
               <!--Mini cart-->
+              <%end %>
               <ul class="cart-inner">
 <%if current_user%>
               <% find_user_cart.each do |item|%>
@@ -121,11 +123,12 @@
                       </span>
                 </li>
                 <%end%>
-
+<% if current_user %>
                     <li class="mini-footer">
                       <%= link_to 'Voir le panier', cart_path(current_user.id),class:"view-cart"%>
                       <a href="shop-checkout.html" class="check-out">Payer</a>
                     </li>
+                    <%end%>
                   </ul>
                   <!--End mini cart-->
                 </li>

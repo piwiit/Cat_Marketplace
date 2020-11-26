@@ -1,16 +1,19 @@
 module ApplicationHelper
   
   def find_user_cart
+    if current_user
   @cart = Cart.find(current_user.id)
   array = @cart.join_art_carts.to_a
   @art = []
   array.each do |n| 
     @art << Artwork.find(n.artwork_id)
+
   end 
 
 
   # Array each do 
   return @art
+end 
   end
 
   def find_total_price
