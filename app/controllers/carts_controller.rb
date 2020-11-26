@@ -38,12 +38,4 @@ class CartsController < ApplicationController
   def cart_params
     params.require(:cart).permit(:user_id)
   end
-
-  def total
-    total = 0
-    self.line_items.each do |line_item|
-        total += line_item.product.price
-    end
-    return total
-end
 end

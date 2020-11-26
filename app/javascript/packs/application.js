@@ -8,6 +8,17 @@ require("@rails/activestorage").start()
 require("turbolinks").start()
 require("channels")
 
+require("packs/custom")
+$(function() {
+  $("#artworks th a, #artworks .pagination a").live("click", function() {
+    $.getScript(this.href);
+    return false;
+  });
+$("#artworks_search input").keyup(function() {
+  $.get($("#artworks_search").attr("action"), $("#artworks_search").serialize(), null, "script");
+  return false;
+});
+});
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
