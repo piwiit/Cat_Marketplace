@@ -1,11 +1,11 @@
 <section class="default-page">
   <div class="container">
     <div class="tz-register">
-      <h2>Ajouter un artwork</h2>
+      <h2>Ajouter un Artwork</h2>
       <% if artwork.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(artwork.errors.count, "error") %>
-            prohibited this artwork from being saved:</h2>
+            prohibited this Artwork from being saved:</h2>
           <ul>
             <% artwork.errors.full_messages.each do |message| %>
               <li><%= message %></li>
@@ -29,7 +29,7 @@
           </p>
           <p class="form-row form-row-wide">
             <%= form.label :description %>
-            <%= form.text_area :description, required: true,min: 10, max: 5000, placeholder: "Décrire l'oeuvre" %>
+            <%= form.text_area :description, required: true,min: 10, max: 5000, placeholder: "Déscription de l'Artwork" %>
           </p>
           <p class="form-row form-row-wide">
             <%= form.label :price %>
