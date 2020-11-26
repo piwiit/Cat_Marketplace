@@ -1,11 +1,10 @@
-class CategoriesController < ApplicationControlle
-    # PRECISER les bon params, ajouter aguilleur AJAX, et les redirect du NEW et UPDATE
-   #Regler le probleme d'un destroy de cat. (Artworks sans cat. ?)
+class CategoriesController < ApplicationController
 
-  # verifier les REDIRECT
-
-  def index
-@Categories = Category.all
+  def show
+    @category = Category.find(params[:id])
+    @artworks_all = Artwork.all
+    @artworks = @category.artworks
+    @categories = Category.all
   end
 
   def new

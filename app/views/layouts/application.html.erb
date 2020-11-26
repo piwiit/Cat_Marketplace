@@ -17,7 +17,7 @@
             <div class="container">
               <!--Start header content-->
               <div class="header-content">
-                <h3 class="tz-logo pull-left"><a href="index.html"><%= image_tag "logo.png" %></a></h3>
+                <h3 class="tz-logo pull-left"><%= link_to root_path do %><%= image_tag "logo.png"%><%end%></h3>
                 <div class="tz-search pull-right">
                   <!--Start form search-->
                   <form>

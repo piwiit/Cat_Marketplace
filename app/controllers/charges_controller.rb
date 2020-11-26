@@ -5,7 +5,6 @@ class ChargesController < ApplicationController
 
   def create
     cart = Cart.find_by(user_id: current_user.id)
-
     customer =
       Stripe::Customer.create(
         { email: params[:stripeEmail], source: params[:stripeToken] }
@@ -20,6 +19,7 @@ class ChargesController < ApplicationController
           currency: 'eur'
         }
       )
+    cart.update(is_paid: true) if charge.save
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_cart_charge_path(cart.id)

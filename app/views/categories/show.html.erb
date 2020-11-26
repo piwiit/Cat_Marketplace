@@ -16,9 +16,9 @@
             </ul>
           </aside>
           <aside class="widget widget_product">
-            <h3 class="widget-title">Suggestion</h3>
+            <h3 class="widget-title">Artworks au hasard</h3>
             <ul>
-              <% @artworks.sample(5).each do |artwork| %>
+              <% @artworks_all.sample(5).each do |artwork| %>
                 <li>
                   <a href="/artworks/<%=artwork.id%>">
                     <%if artwork.picture.attached?%>
@@ -49,10 +49,14 @@
             <li class="current">
               Artworks
             </li>
+            <li class="current">
+              <%= @category.name%>
+            </li>
           </ul>
           <div class="shop-banner">
             <%= image_tag "https://avassor.fr/wp-content/uploads/2018/01/header_pkmn01.png", alt: 'banner' %>
           </div>
+          <h1 class="text-center mt-5-title"> <%= @category.name%></h1>
           <div class="tz-product row grid-eff">
             <!--Product item-->
             <% @artworks.each do |artwork|%>
@@ -90,31 +94,6 @@
             <% end %>
             <!--End product item-->
           </div>
-          <nav class="pagination">
-            <ul class="pagination_list pull-right">
-              <li>
-                <a href="shop.html">1</a>
-              </li>
-              <li>
-                <span class="current">2</span>
-              </li>
-              <li>
-                <a href="shop.html">3</a>
-              </li>
-              <li>
-                <a href="shop.html">4</a>
-              </li>
-              <li>
-                <a href="shop.html">5</a>
-              </li>
-              <li>
-                <span>...</span>
-              </li>
-              <li>
-                <a href="shop.html">Next</a>
-              </li>
-            </ul>
-          </nav>
         </div>
         <!--End shop content-->
       </div>
