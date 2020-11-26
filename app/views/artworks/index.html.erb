@@ -8,55 +8,17 @@
           <aside class="widget widget_product_categories">
             <h3 class="widget-title">Categories</h3>
             <ul class="product-categories">
-              <li>
-                <a href="shop.html"></a>
-              </li>
-              <li>
-                <a href="shop.html">Jeux-video</a>
-              </li>
-              <% @artworks.map{|artwork| artwork.category}.uniq.each do |category| %>
+              <% @categories.each do |category| %>
                 <li>
-                  <a href="shop.html"><%=category.name%></a>
+                  <%=link_to category.name, category_path(category.id)%>
                 </li>
               <% end %>
             </ul>
           </aside>
-          <aside class="product-catlog widget">
-            <h3 class="widget-title">Filtre</h3>
-            <div class="widget_price_filter">
-              <h4 class="widget-title-children">
-                Prix
-              </h4>
-              <form>
-                <div id="slider-range"></div>
-                <div class="price_label">
-                  <button type="submit" class="button">Filtrer</button>
-                  <span class="value-price">
-                    <span class="from"></span>
-                    -
-                    <span class="to"></span>
-                  </span>
-                </div>
-              </form>
-            </div>
-            <div class="widget-size-filter">
-              <h4 class="widget-title-children">
-                Size Filter
-              </h4>
-              <ul>
-                <li>
-                  <a href="shop.html">M - 720p  <span>(24)</span></a>
-                </li>
-                <li>
-                  <a href="shop.html">L - 1080p  <span>(18)</span></a>
-                </li>
-              </ul>
-            </div>
-          </aside>
           <aside class="widget widget_product">
             <h3 class="widget-title">Artworks au hasard</h3>
             <ul>
-              <% @artworks.sample(5).each do |artwork| %>
+              <% @artworks_all.sample(5).each do |artwork| %>
                 <li>
                   <a href="/artworks/<%=artwork.id%>">
                     <%if artwork.picture.attached?%>
@@ -87,34 +49,14 @@
             <li class="current">
               Artworks
             </li>
+            <li class="current">
+              <%= @category.name%>
+            </li>
           </ul>
           <div class="shop-banner">
             <%= image_tag "https://avassor.fr/wp-content/uploads/2018/01/header_pkmn01.png", alt: 'banner' %>
           </div>
-          <div class="catalog-meta">
-            <div class="catalog_top">
-              <span class="style-switch">
-                <a class="nav-grid-view fa fa-th-large active"></a>
-                <a class="nav-list-view fa fa-list"></a>
-              </span>
-              <form class="shop-order">
-                <label class="form-arrow">
-                  <select class="number-item" name="number_item">
-                    <option value="12">12 items/page</option>
-                    <option value="6">6 items/page</option>
-                    <option value="3">3 items/page</option>
-                  </select>
-                </label>
-                <label class="form-arrow">
-                  <select name="orderby" class="orderby">
-                    <option value="'">Sort By: Position</option>
-                    <option value="rating">Sort by rating</option>
-                    <option value="date">Sort by newness</option>
-                  </select>
-                </label>
-              </form>
-            </div>
-          </div>
+          <h1 class="text-center mt-5-title"> <%= @category.name%></h1>
           <div class="tz-product row grid-eff">
             <!--Product item-->
             <% @artworks.each do |artwork|%>
@@ -152,13 +94,6 @@
             <% end %>
             <!--End product item-->
           </div>
-          <nav class="pagination">
-            <ul class="pagination_list pull-right">
-              <%= form_tag artworks_path, :method => 'get',:id => "artworks_search", remote: true do %>
-                <div id="artworks"><%= render 'artworks' %></div>
-              <% end %>
-            </ul>
-          </nav>
         </div>
         <!--End shop content-->
       </div>
