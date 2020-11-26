@@ -1,24 +1,58 @@
-# README
+# Ankan'Art
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ankan'Art est une boutique en ligne de vente d'Artwork de Manga/Animé/Jeux-Vidéo, etc.
 
-Things you may want to cover:
+Nous avons utilisés les technologies suivantes : 
+-
+- HTML 
+- CSS (Bootstrap) 
+- Ruby 
+- Rails
+- PostgreSQL 
+- Javascript
+- Active Storage
+- Mailer
+- Stripe API
+ 
 
-* Ruby version
 
-* System dependencies
+## Installation
 
-* Configuration
+Pour installer l'application, suivez les différentes étapes :
 
-* Database creation
+```bash
+bundle install
+```
 
-* Database initialization
+```bash
+yarn install --checkfiles
+```
 
-* How to run the test suite
+```bash
+rails db:create db:migrate db:seed
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+rails s
+```
 
-* Deployment instructions
+## Expérience Utilisateur
 
-* ...
+Créer vous un compte, parcourez les Artworks, ajoutez les à votre panier et passer au paiement. 
+
+### Stripe
+
+Pour le modal de paiement, rentrez les coordonnées suivantes : 
+
+- Votre Email 
+- Carte de crédit : 4242 4242 4242 4242 
+- Date d'expiration : 01/22
+- Cryptogramme : 123
+
+## Équipes
+Ce projet a été réalisé par Chris, Ugo, Jon, Killian, Flo, mais SURTOUT !
+
+Il a été réalisé avec amour et pas mal de bugs.
+
+## Heroku
+Cette application est aussi disponible sur [Heroku](http://ankanart-dev.herokuapp.com/) !
