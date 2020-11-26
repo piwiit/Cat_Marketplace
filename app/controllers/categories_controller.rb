@@ -15,7 +15,7 @@ class CategoriesController < ApplicationController
   def create
   @category.new = Categories.new(name: params[:name])
   if @category.save
-    redirect_back(fallback_location: root_path)    # IMPORTANT ! Permet de revenir a la page de base A VOIR SI çA MARCHE !!!
+    redirect_back(fallback_location: root_path)   
 flash[:notice_good] = "Category Crée"
   else 
     flash[:notice_bad] = "Creation avortée"
@@ -23,12 +23,10 @@ flash[:notice_good] = "Category Crée"
     end 
   end
 
-
   def edit
 @category_edit = Categories.find(params[:id])
   end
 
-#Pouvoir changer le nom d'une categorie. Par exemple spiderman => Ultimate Spiderman
   def update
 @category = Categories.find(params[:id])
 category_params = params.require(:category).permit(:name)
@@ -38,7 +36,6 @@ category_params = params.require(:category).permit(:name)
 end
 
 
-# chris : lorsqu'on detruit une categorie, comment reagissent les artworks ?
   def destroy
 @
   end

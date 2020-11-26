@@ -1,4 +1,4 @@
-class ArtworksController < ApplicationController # verifier les REDIRECT # gerer Activerecord pour creation et update d'artwork # PRECISER les bon params, ajouter aguilleur AJAX, et les redirect du NEW et UPDATE
+class ArtworksController < ApplicationController
   def index
     @categories = Category.all
     @artworks = Artwork.all.paginate(:per_page => 6, :page => params[:page])

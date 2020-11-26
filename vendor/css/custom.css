@@ -308,7 +308,7 @@ input {
   background: #ffffff;
 }
 .section-medium {
-  padding: 90px 0;
+  padding: 33px 0;
 }
 .section-large {
   background: #ffffff;
@@ -3171,6 +3171,7 @@ input {
 .actions .update-cart:hover,
 .actions .update-cart:focus {
   background: #393e46;
+  color: #FFD369;
 }
 .coupon h3 {
   font-size: 20px;
