@@ -65,7 +65,7 @@
             <% else %>
           <%=render 'registrations/loginmodal' %>
             <% end %>
-            <% if current_user %>
+            <% if current_user && current_user.carts.exists? %>
             <li class="tz-mini-cart">
               <%= link_to cart_path(current_user.id) do%><strong><%=find_user_cart.length%></strong>Panier : <%= find_total_price%>€<%end%>
               <!--Mini cart-->
