@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
   # Home controller
   root 'home#index'
-  resources :contact, only: [:index]
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  # Resources
+  resources :contact, only: %i[index] # Resources
   devise_for :users
-  resources :carts
-
+  resources :carts do
+    resources :charges
+  end
   resources :users do
     resources :orders
   end
@@ -14,6 +13,6 @@ Rails.application.routes.draw do
     resources :pictures
   end
   resources :categories
-  resources :charges
+
   resources :join_art_carts
 end

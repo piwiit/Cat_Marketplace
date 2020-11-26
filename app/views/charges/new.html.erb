@@ -1,4 +1,5 @@
-<%= form_tag charges_path do %>
+<%= form_tag cart_charges_path(@cart.id) do %>
+  <%= current_user.firstname%>
   <article>
     <% if flash[:error].present? %>
       <div id="error_explanation">
@@ -6,13 +7,12 @@
       </div>
     <% end %>
     <label class="amount">
-      <span>Amount: $5.00</span>
+      <span><%=@cart.total%></span>
     </label>
   </article>
-
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="500"
+          data-description="Total de votre panier à payer :"
+          data-amount=<%=(@cart.total * 100).to_i%>
           data-locale="auto"></script>
 <% end %>
