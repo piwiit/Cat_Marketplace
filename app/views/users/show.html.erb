@@ -64,13 +64,21 @@ Viande à chien de mosus d'étole de sacrament de cul de purée de charrue de ma
             <b class="col-md-2">TOTAL</b>
             <b class="col-md-1"><i class="fas fa-print"></i></b>
           </div>
-          <%if @user_order.count > 0%>
+          <%if @cart_ended.count > 0%>
           <% number = 0 %>
-          <% @user_order.each do |order|%>
+          <% @cart_ended.each do |order|%>
           <div class="card-profile justify-content-around">
             <div class="col-md-2">Commande nº <%=number +=1%></div>
             <div class="col-md-2"><%=order.created_at.strftime("%d/%m/%Y")%></div>
-            <div class="col-md-2"><%=order.total_price.to_i%></div>
+            <div class="col-md-2"><%   array = order.join_art_carts.to_a
+    @art = []
+    array.each do |n| 
+      @art << Artwork.find(n.artwork_id)
+    end 
+  @amount = 0
+    @art.each do |p|
+      @amount += p.price
+    end %><%=@amount%></div>
             <div class="col-md-1"><a href="https://www.youtube.com/watch?v=qlbz6P3q0tw" target="_blank"><i class="fas fa-print"></i></a></div>
           </div>
           <%end%>

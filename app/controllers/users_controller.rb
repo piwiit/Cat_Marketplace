@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @user_cart = Cart.where(user_id: current_user.id)
+    @cart_ended = @user_cart.where(is_paid: true)
     @user_order = Order.where(cart_id: @user_cart.ids)
   end
 

@@ -20,7 +20,7 @@ class ChargesController < ApplicationController
           currency: 'eur'
         }
       )
-    cart.update(is_paid: true) if charge.save
+    @cart.update(is_paid: true) if @charge.save
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_cart_charge_path(@cart.id)
