@@ -6,7 +6,7 @@
 /** FOOTER **/
 
 .stripe-form {
-  background-color: #E6E6E6;
+  background-color: #e6e6e6;
   border-radius: 1rem;
   border: solid 1px black;
   padding: 5rem;
@@ -310,6 +310,9 @@ input {
 .border-left {
   border-left: 1px solid #e0e0e0;
 }
+.border-right {
+  border-right: 1px solid #e0e0e0;
+}
 .section-large-top {
   padding-top: 100px;
   background: #ffffff;
@@ -519,7 +522,6 @@ input {
   visibility: visible;
 }
 .header-top ul.pull-left li:first-child a {
-
 }
 .header-top ul.pull-right li:last-child a {
   padding-right: 0;
@@ -1310,7 +1312,6 @@ input {
 .cart-inner .mini-footer .check-out:focus {
   background: #222831;
   color: #ffd369;
-
 }
 .tz_icon_menu {
   background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
@@ -2111,7 +2112,7 @@ input {
   .p-mask
   a:focus {
   background: #393e46;
-  color: #ffd369; 
+  color: #ffd369;
 }
 
 .tz-product
@@ -2990,7 +2991,7 @@ input {
 .single_add_to_cart_button:hover,
 .single_add_to_cart_button:focus {
   background-color: #222831;
-  color: #FFD369;
+  color: #ffd369;
 }
 .single_add_to_wishlist {
   background-image: url("wishlist_black.png");
@@ -3178,7 +3179,7 @@ input {
 .actions .update-cart:hover,
 .actions .update-cart:focus {
   background: #393e46;
-  color: #FFD369;
+  color: #ffd369;
 }
 .coupon h3 {
   font-size: 20px;

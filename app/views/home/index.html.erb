@@ -26,13 +26,13 @@
       <div class="box-shadow section-small">
         <div class="row">
           <div class="col-md-4">
-            <div class="custom-content">
+            <div class="custom-content border-right">
               <h3>Livraison par mail</h3>
               <p>7j/7 24h/24</p>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="custom-content border-left">
+            <div class="custom-content">
               <h3>Haute Résolution</h3>
               <p>Nos dessins sont réalisés pour rendre parfaitement sur tous vos appareils</p>
             </div>
@@ -67,7 +67,8 @@
                 </li>
                 <li>
                   <h3><a href="single-product.html"><%=@promotion.title%></a></h3>
-                  <p class="tz-color" style="text-decoration: line-through"><%=@promotion.price%> €</p><span class="event-price" style="color : #ec971f"><%=@promotion.price/2%>€</span>
+                  <p class="tz-color" style="text-decoration: line-through"><%=@promotion.price%> €</p>
+                  <span class="event-price" style="color : #ec971f"><%=@promotion.price/2%>€</span>
                 </li>
                 <li class="product-event-attr">
                   <span class="tz-color">
@@ -76,188 +77,177 @@
                   </span>
                 </li>
                 <li class="event-footer">
-                <%= link_to 'Ajouter au panier',join_art_carts_path(artwork_id: @promotion.id), method: 'POST',class:"add-to-cart"%>
+                  <%= link_to 'Ajouter au panier',join_art_carts_path(artwork_id: @promotion.id), method: 'POST',class:"add-to-cart"%>
                 </li>
-          </div>
-        </div>
-        <!--End product event-->
-      </div>
-    </div>
-    <!--End section medium for product event-->
-    <!--Start section large top for tabs content-->
-    <div class="section-large-top">
-      <div class="container">
-        <!--Tabs Shop-->
-        <div class="tz-shortcode-tabs">
-          <!--Tabs Header-->
-          <div class="tz-tabs-header">
-            <h2 class="tz-tabs-title pull-left">Dernières créations</h2>
-          </div>
-          <!--End tab header-->
-          <!--Tab content-->
-          <div class="tab-content">
-            <!--Tab item-->
-            <div class="tab-pane active" id="one_read">
-              <div class="row">
-              <!--Start Loop-->
-              <% @artworks_last.first(3).each do |artwork|%>
-                <div class="col-md-4 col-sm-6">
-                  <div class="product-item">
-                    <div class="product-thubnail">
-                      <img src="https://images.pexels.com/photos/1134166/pexels-photo-1134166.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="product 1" />
-                      <div class="product-meta">
-                        
-                        
-                        <%= link_to 'Ajouter au panier',join_art_carts_path(artwork_id: artwork.id), method: 'POST',class:"add-to-cart"%>
-                        <span class="quick-view">
-                          <%= link_to 'Voir', artwork_path(artwork.id) %>
-                        </span>
-                      </span>
-                      </div>
-                    </div>
-                    <div class="product-infomation">
-                      <h4><a><%=artwork.title%></a></h4>
-                      <span class="product-price"><%=artwork.price%> €</span>
-                    </div>
-                  </div>
-                </div>
-                <% end %>
-<!--End Loop-->
-                
               </div>
             </div>
-            <!--End tab item-->
+            <!--End product event-->
           </div>
-          <!--End tab content-->
         </div>
-        <!--End Tabs Shop-->
-      </div>
-    </div>
-    <!--End section large top for tabs content-->
-    <!--Start section large top for tabs content-->
-    <div class="section-large-top">
-      <div class="container">
-        <!--Start class Shortcode tabs-->
-        <div class="tz-shortcode-tabs">
-          <!--Tabs Header-->
-          <div class="tz-tabs-header">
-            <h2 class="tz-tabs-title pull-left">Les + populaires</h2>
-          </div>
-          <!--End Tabs header-->
-          <!--Start Tabs content-->
-          <div class="tab-content">
-            <!--Tab item-->
-            <div class="tab-pane active" id="baby_seats">
-              <!--Start product-->
-              <div class="row row-item">
-              <!--Start loop-->
-              <% @artworks_last.sample(4).each do |artwork|%>
-                <div class="col-md-3 col-sm-6">
-                  <div class="product-item">
-                    <div class="product-thubnail">
-                      <img src="https://images.pexels.com/photos/1134166/pexels-photo-1134166.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="product 4" />
-                      <div class="product-meta">
-                        
-                       
-                        <%= link_to 'Ajouter au panier',join_art_carts_path(artwork_id: artwork.id), method: 'POST',class:"add-to-cart"%>
-                        <span class="quick-view">
-                          <%= link_to 'Voir', artwork_path(artwork.id) %>
-                        </span>
-                      </span>
+        <!--End section medium for product event-->
+        <!--Start section large top for tabs content-->
+        <div class="section-large-top">
+          <div class="container">
+            <!--Tabs Shop-->
+            <div class="tz-shortcode-tabs">
+              <!--Tabs Header-->
+              <div class="tz-tabs-header">
+                <h2 class="tz-tabs-title pull-left">Dernières créations</h2>
+              </div>
+              <!--End tab header-->
+              <!--Tab content-->
+              <div class="tab-content">
+                <!--Tab item-->
+                <div class="tab-pane active" id="one_read">
+                  <div class="row">
+                    <!--Start Loop-->
+                    <% @artworks_last.first(3).each do |artwork|%>
+                      <div class="col-md-4 col-sm-6">
+                        <div class="product-item">
+                          <div class="product-thubnail">
+                            <img src="https://images.pexels.com/photos/1134166/pexels-photo-1134166.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="product 1" />
+                            <div class="product-meta">
+                              <%= link_to 'Ajouter au panier',join_art_carts_path(artwork_id: artwork.id), method: 'POST',class:"add-to-cart"%>
+                              <span class="quick-view">
+                                <%= link_to 'Voir', artwork_path(artwork.id) %>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="product-infomation">
+                          <h4><a><%=artwork.title%></a></h4>
+                          <span class="product-price"><%=artwork.price%> €</span>
+                        </div>
                       </div>
                     </div>
-                    <div class="product-infomation">
-                      <h4><a href="single-product.html"><%=artwork.title%></a></h4>
-                      <span class="product-price"><%=artwork.price%>€</span>
-                    </div>
-                  </div>
-                 
+                  <% end %>
+                  <!--End Loop-->
                 </div>
-                <%end%>
- <!-- End loop-->
-
-
               </div>
-              <div class="row row-item">
-              <!--Start loop-->
-              <% @artworks_last.sample(4).each do |artwork|%>
-                <div class="col-md-3 col-sm-6">
-                  <div class="product-item">
-                    <div class="product-thubnail">
-                      <img src="https://images.pexels.com/photos/1134166/pexels-photo-1134166.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="product 4" />
-                      <div class="product-meta">
-                        
-                        
-                        <%= link_to 'Ajouter au panier',join_art_carts_path(artwork_id: artwork.id), method: 'POST',class:"add-to-cart"%>
-                        <span class="quick-view">
-                          <%= link_to 'Voir', artwork_path(artwork.id) %>
-                        </span>
-                      </span>
-                      </div>
-                    </div>
-                    <div class="product-infomation">
-                      <h4><a href="single-product.html"><%=artwork.title%></a></h4>
-                      <span class="product-price"><%=artwork.price%>€</span>
-                    </div>
-                  </div>
-                 
-                </div>
-                <%end%>
- <!-- End loop-->
-              </div>
-              <!--End product-->
+              <!--End tab item-->
             </div>
-            <!--End tab item-->
-            <!--Tab item-->
-            <!--End tabs content-->
+            <!--End tab content-->
           </div>
-          <!--End class Shortcode tabs-->
+          <!--End Tabs Shop-->
         </div>
       </div>
       <!--End section large top for tabs content-->
-      <section class="parallax background-parallax" style="background-position: 30% 6px;">
+      <!--Start section large top for tabs content-->
+      <div class="section-large-top">
         <div class="container">
-          <!--Get In Touch-->
-          <div class="get-in-touch">
-            <h3>Restons en contact</h3>
-            <p>Vous voulez proposer une idée de dessin?</p>
-            <%= link_to "Contactez-nous", contact_index_path %>
+          <!--Start class Shortcode tabs-->
+          <div class="tz-shortcode-tabs">
+            <!--Tabs Header-->
+            <div class="tz-tabs-header">
+              <h2 class="tz-tabs-title pull-left">Les + populaires</h2>
+            </div>
+            <!--End Tabs header-->
+            <!--Start Tabs content-->
+            <div class="tab-content">
+              <!--Tab item-->
+              <div class="tab-pane active" id="baby_seats">
+                <!--Start product-->
+                <div class="row row-item">
+                  <!--Start loop-->
+                  <% @artworks_last.sample(4).each do |artwork|%>
+                    <div class="col-md-3 col-sm-6">
+                      <div class="product-item">
+                        <div class="product-thubnail">
+                          <img src="https://images.pexels.com/photos/1134166/pexels-photo-1134166.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="product 4" />
+                          <div class="product-meta">
+                            <%= link_to 'Ajouter au panier',join_art_carts_path(artwork_id: artwork.id), method: 'POST',class:"add-to-cart"%>
+                            <span class="quick-view">
+                              <%= link_to 'Voir', artwork_path(artwork.id) %>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="product-infomation">
+                        <h4><a href="single-product.html"><%=artwork.title%></a></h4>
+                        <span class="product-price"><%=artwork.price%>€</span>
+                      </div>
+                    </div>
+                  </div>
+                <%end%>
+                <!-- End loop-->
+              </div>
+              <div class="row row-item">
+                <!--Start loop-->
+                <% @artworks_last.sample(4).each do |artwork|%>
+                  <div class="col-md-3 col-sm-6">
+                    <div class="product-item">
+                      <div class="product-thubnail">
+                        <img src="https://images.pexels.com/photos/1134166/pexels-photo-1134166.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="product 4" />
+                        <div class="product-meta">
+                          <%= link_to 'Ajouter au panier',join_art_carts_path(artwork_id: artwork.id), method: 'POST',class:"add-to-cart"%>
+                          <span class="quick-view">
+                            <%= link_to 'Voir', artwork_path(artwork.id) %>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="product-infomation">
+                      <h4><a href="single-product.html"><%=artwork.title%></a></h4>
+                      <span class="product-price"><%=artwork.price%>€</span>
+                    </div>
+                  </div>
+                </div>
+              <%end%>
+              <!-- End loop-->
+            </div>
+            <!--End product-->
           </div>
-          <!--End Get In Touch-->
+          <!--End tab item-->
+          <!--Tab item-->
+          <!--End tabs content-->
         </div>
-      </section>
+        <!--End class Shortcode tabs-->
+      </div>
     </div>
-    <!--End class site-->
-    <script>
-// Set the date we're counting down to
-var countDownDate = new Date("Dec 5, 2020 15:37:25").getTime();
-
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get today's date and time
-  var now = new Date().getTime();
-
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  // Display the result in the element with id="demo"
-  document.getElementById("days").innerHTML = days 
-  document.getElementById("hours").innerHTML = hours 
-    document.getElementById("minutes").innerHTML = minutes 
-        document.getElementById("seconds").innerHTML = seconds 
-
-
-  // If the count down is finished, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
-}, 1000);
-</script>
+    <!--End section large top for tabs content-->
+    <section class="parallax background-parallax" style="background-position: 30% 6px;">
+      <div class="container">
+        <!--Get In Touch-->
+        <div class="get-in-touch">
+          <h3>Restons en contact</h3>
+          <p>Vous voulez proposer une idée de dessin?</p>
+          <%= link_to "Contactez-nous", contact_index_path %>
+        </div>
+        <!--End Get In Touch-->
+      </div>
+    </section>
+  </div>
+  <!--End class site-->
+  <script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Dec 5, 2020 15:37:25").getTime();
+    
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+    
+      // Get today's date and time
+      var now = new Date().getTime();
+    
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+    
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+      // Display the result in the element with id="demo"
+      document.getElementById("days").innerHTML = days
+      document.getElementById("hours").innerHTML = hours
+        document.getElementById("minutes").innerHTML = minutes
+            document.getElementById("seconds").innerHTML = seconds
+    
+    
+      // If the count down is finished, write some text
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+  </script>
