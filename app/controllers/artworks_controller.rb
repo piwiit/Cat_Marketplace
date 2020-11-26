@@ -12,6 +12,7 @@ class ArtworksController < ApplicationController # verifier les REDIRECT # gerer
   def show
     @artworks = Artwork.all
     @artwork = Artwork.find(params[:id])
+
   end
 
   def new

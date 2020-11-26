@@ -2,11 +2,12 @@
   <li class="tz-header-login">
     <a>Profil</a>
     <div class="tz-login-form">
-      <p class="form-footer text-center">
-        <%= link_to "Profil", user_path(current_user.id) %>
+      <p class="form-footer">
+        <%= link_to "Profil", user_path(current_user.id), class: "button_class" %>
       </p>
-            <p class="mini-footer text-center">
-                <%= button_to "Se déconnecter", destroy_user_session_path, method: :delete  %>
+      
+            <p class="form-footer">
+                <%= button_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "pull-right button_class"  %>
             </p>
   </li>
 

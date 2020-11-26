@@ -4,10 +4,13 @@
                 <a>Profil</a>
                 <div class="tz-login-form">    
             <p class="form-footer text-center">
-             <%= link_to "Profil", user_path(current_user.id) %>
-            </p>
-
-            <p class="mini-footer text-center">
-                <%= button_to "Se déconnecter", destroy_user_session_path, method: :delete  %>
-            </p>
-              </li>
+             <%= link_to "Mon Profil", user_path(current_user.id), class: "btn btn-default" %>
+             <br>
+             <br>
+</p>
+<p class="form-footer text-center">
+             <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete  %>
+             </p>
+                          <br>
+            
+        </li>

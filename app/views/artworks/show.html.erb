@@ -7,7 +7,7 @@
         <%=link_to "Accueil", root_path%>
       </li>
       <li class="current">
-        Categorie
+        <%=link_to "Artworks", artworks_path%>
       </li>
     </ul>
     <!--End Breadcrumbs-->
@@ -35,17 +35,13 @@
             <span class="price"><%= @artwork.price %>€</span>
             <span class="stock">
               <span>
-                <% if @artwork.quantity != nil && @artwork.quantity > 0 %>
-                  <%= "Promotion en cours !" %>
-                <% end %>
               </span>
             </span>
           </p>
           <div class="description">
             <p>
               <%= @artwork.title %></p>
-            <p>
-              Taille : 1920 x 1080</p>
+       
           </div>
           <form class="tz_variations_form ">
             <p class="form-attr"></p>
