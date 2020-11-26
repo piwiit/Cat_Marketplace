@@ -4,7 +4,10 @@ class CartsController < ApplicationController
     @carts = Cart.all
   end
 
-  def show; end
+  def show
+
+
+   end
 
   def new
     @cart = Cart.new
@@ -21,9 +24,11 @@ class CartsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+   end
 
-  def update; end
+  def update
+   end
 
   def destroy
     @cart_to_delete = Cart.find(params[:id])
@@ -38,4 +43,10 @@ class CartsController < ApplicationController
   def cart_params
     params.require(:cart).permit(:user_id)
   end
+<<<<<<< HEAD
+
+  def total
+  end
+=======
+>>>>>>> be47195dd1223db1c4fe1cd206166ace27318b53
 end

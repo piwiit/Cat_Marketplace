@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2020_11_26_153247) do
   end
 
   create_table "carts", force: :cascade do |t|
+    t.boolean "is_archived", default: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -62,8 +63,8 @@ ActiveRecord::Schema.define(version: 2020_11_26_153247) do
   end
 
   create_table "join_art_carts", force: :cascade do |t|
-    t.bigint "cart_id", null: false
-    t.bigint "artwork_id", null: false
+    t.bigint "cart_id"
+    t.bigint "artwork_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "quantity"
@@ -101,6 +102,4 @@ ActiveRecord::Schema.define(version: 2020_11_26_153247) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "join_art_carts", "artworks"
-  add_foreign_key "join_art_carts", "carts"
 end

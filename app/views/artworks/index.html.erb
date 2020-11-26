@@ -16,7 +16,7 @@
             </ul>
           </aside>
           <aside class="widget widget_product">
-            <h3 class="widget-title">Artworks au hasard</h3>
+            <h3 class="widget-title">Suggestion</h3>
             <ul>
               <% @artworks.sample(5).each do |artwork| %>
                 <li>
@@ -92,9 +92,27 @@
           </div>
           <nav class="pagination">
             <ul class="pagination_list pull-right">
-              <%= form_tag artworks_path, :method => 'get',:id => "artworks_search", remote: true do %>
-                <div id="artworks"><%= render 'artworks' %></div>
-              <% end %>
+              <li>
+                <a href="shop.html">1</a>
+              </li>
+              <li>
+                <span class="current">2</span>
+              </li>
+              <li>
+                <a href="shop.html">3</a>
+              </li>
+              <li>
+                <a href="shop.html">4</a>
+              </li>
+              <li>
+                <a href="shop.html">5</a>
+              </li>
+              <li>
+                <span>...</span>
+              </li>
+              <li>
+                <a href="shop.html">Next</a>
+              </li>
             </ul>
           </nav>
         </div>
