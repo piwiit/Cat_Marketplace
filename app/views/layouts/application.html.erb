@@ -89,21 +89,41 @@
           <%=render 'registrations/loginmodal' %>
             <% end %>
             <li class="tz-mini-cart">
-              <a href="/users/:user_id/carts/:id"><strong>2</strong>Panier : 199€</a>
+              <a href="/users/:user_id/carts/:id"><strong><%=find_user_cart.length%></strong>Panier : <%= find_total_price%>€</a>
               <!--Mini cart-->
               <ul class="cart-inner">
+<%if current_user%>
+              <% find_user_cart.each do |item|%>
                 <li class="mini-cart-content">
                   <div class="mini-cart-img"><%image_tag "product/product-cart1.png"%></div>
                   <div class="mini-cart-ds">
-                    <h6><a href="single-product.html">Dessin 1</a></h6>
+                  <%= link_to artwork_path(item.id) do %>
+                   <%=item.title%>
+                  <%end %>
                     <span class="mini-cart-meta">
-                      <a href="single-product.html">2650 €</a>
+                  <%= link_to artwork_path(item.id) do %>
+                  <%=item.price%> €
+                  <%end %>
                       <span class="mini-meta">
-                        <span class="mini-color">Livraison: 24h <i class="far fa-clock"></i></span>
+                        <span class="mini-color">Disponible <i class="far fa-clock"></i></span>
                       </span>
-                    </li>
+                </li>
+                <%end%>
+                <% else %>
+                <li class="mini-cart-content">
+                  <div class="mini-cart-img"><%image_tag "product/product-cart1.png"%></div>
+                  <div class="mini-cart-ds">
+                    <h6><a href="single-product.html">Panier vide</a></h6>
+                    <span class="mini-cart-meta">
+                      <a href="single-product.html"></a>
+                      <span class="mini-meta">
+                        <span class="mini-color"></span>
+                      </span>
+                </li>
+                <%end%>
+
                     <li class="mini-footer">
-                      <a href="/users/:current_user.id/carts/:id" class="view-cart">Voir le panier</a>
+                      <%= link_to 'Voir le panier', cart_path(current_user.id),class:"view-cart"%>
                       <a href="shop-checkout.html" class="check-out">Payer</a>
                     </li>
                   </ul>
