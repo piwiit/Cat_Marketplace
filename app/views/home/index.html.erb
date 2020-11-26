@@ -76,6 +76,7 @@
                   </span>
                 </li>
                 <li class="event-footer">
+                <%= link_to 'Ajouter au panier',join_art_carts_path(artwork_id: @promotion.id), method: 'POST',class:"add-to-cart"%>
                 </li>
           </div>
         </div>
