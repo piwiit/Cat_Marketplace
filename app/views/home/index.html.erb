@@ -66,7 +66,7 @@
                   <div id="defaultCountdown" class="tzCountdown is-countdown"><span class="countdown-row countdown-show3"><span class="countdown-section"><span class="countdown-amount" id="days">0</span><span class="countdown-period">Jours</span></span><span class="countdown-section"><span class="countdown-amount" id="hours">0</span><span class="countdown-period">Heures</span></span><span class="countdown-section"><span class="countdown-amount" id="minutes">0</span><span class="countdown-period">Minutes</span></span><span class="countdown-section"><span class="countdown-amount" id="seconds">0</span><span class="countdown-period">Secondes</span></span></span></div>
                 </li>
                 <li>
-                  <h3><a href="single-product.html"><%=@promotion.title%></a></h3>
+                  <%= link_to artwork_path(@promotion.id) do %><h3><%=@promotion.title%></h3><%end%>
                   <p class="tz-color" style="text-decoration: line-through"><%=@promotion.price*2%> €</p><span class="event-price" style="color : #ec971f"><%=@promotion.price%>€</span>
                 </li>
                 <li class="product-event-attr">
